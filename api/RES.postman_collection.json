@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "35031de7-580c-4bb6-acfb-b1fc7d41fe5a",
-		"name": "CES",
+		"name": "RES",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "19782562"
 	},
@@ -4649,44 +4649,8 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "category_id",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "name",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "discount",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "price",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "media",
-									"type": "file",
-									"src": []
-								},
-								{
-									"key": "descriptions_name",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "descriptions_md",
-									"type": "file",
-									"src": []
-								}
-							]
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\": 1,\r\n    \"name\": \"abc\",\r\n    \"discount\": 20,\r\n    \"price\": 20000,\r\n    \"media\": [\r\n        {\r\n            \"public_id\": \"xyz\",\r\n            \"priority\": 2,\r\n            \"media_path\": \"mnp\",\r\n            \"media_type\": \"IMAGE\"\r\n        }\r\n    ],\r\n    \"specifications\": [\r\n        {\r\n            \"specification\": {\r\n                \"properties\": \"Hường xuân\"\r\n            },\r\n            \"options\": [\r\n                {\r\n                    \"name\": \"Him\",\r\n                    \"price\": 20000,\r\n                    \"quantity\": 100\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"specification\": {\r\n                \"properties\": \"Hạ mùa\"\r\n            },\r\n            \"options\": [\r\n                {\r\n                    \"name\": \"Him\",\r\n                    \"price\": 20000,\r\n                    \"quantity\": 100\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"descriptions\": [\r\n        {\r\n            \"public_id\": \"xyz\",\r\n            \"name\": \"abc\",\r\n            \"path\": \"mnp\"\r\n        }\r\n    ]\r\n}"
 						},
 						"url": {
 							"raw": "{{productV1Path}}/provider/:provider_id/user/:user_id",
@@ -4714,7 +4678,7 @@
 							"variable": [
 								{
 									"key": "provider_id",
-									"value": "1"
+									"value": "2"
 								},
 								{
 									"key": "user_id",
@@ -4815,7 +4779,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"specification\": {\r\n        \"properties\": \"Hường xuân\"\r\n    },\r\n    \"options\": [\r\n        {\r\n            \"name\": \"Him\",\r\n            \"price\": 20000,\r\n            \"quantity\": 100\r\n        },\r\n        {\r\n            \"name\": \"Who\",\r\n            \"price\": 20000,\r\n            \"quantity\": 100\r\n        },\r\n        {\r\n            \"name\": \"Whom\",\r\n            \"price\": 20000,\r\n            \"quantity\": 100\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"specification\": {\r\n        \"properties\": \"Hường xuân\",\r\n        \"specification_id\": 10\r\n    },\r\n    \"options\": [\r\n        {\r\n            \"name\": \"Him\",\r\n            \"price\": 20000,\r\n            \"quantity\": 100\r\n        },\r\n        {\r\n            \"name\": \"Who\",\r\n            \"price\": 20000,\r\n            \"quantity\": 100\r\n        },\r\n        {\r\n            \"name\": \"Whom\",\r\n            \"price\": 20000,\r\n            \"quantity\": 100\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4846,7 +4810,7 @@
 							"variable": [
 								{
 									"key": "product_id",
-									"value": "1"
+									"value": "12"
 								}
 							]
 						}
