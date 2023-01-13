@@ -85,7 +85,7 @@ func (s *context) BindError(err error) {
 		key = unmarshalErr.Field
 	}
 
-	message := fmt.Sprintf("%s invalid params", key)
+	message := fmt.Sprintf("%s invalid paging_params", key)
 
 	s.BadRequest(NewBadRequestError(key, "", message))
 }

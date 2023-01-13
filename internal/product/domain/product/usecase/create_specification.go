@@ -7,6 +7,9 @@ import (
 )
 
 func (u *productUseCase) CreateSpecification(ctx context.Context, input ioUC.SpecificationCreateForm) (specID uint, err error) {
+	if len(input.Options) < 1 {
+		return 0, gorm.ErrEmptySlice
+	}
 	spec, err := u.productSto.GetRoofSpecificationByProductID(ctx, input.Specification.ProductID, input.Specification.SpecificationID)
 	if err != nil && err != gorm.ErrRecordNotFound {
 		return 0, err

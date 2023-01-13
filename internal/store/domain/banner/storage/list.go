@@ -3,18 +3,19 @@ package storage
 import (
 	"context"
 	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
 	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
 	"github.com/eNViDAT0001/Backend/internal/store/entities"
 )
 
-func (b bannerStorage) ListBanner(ctx context.Context, filter paging.GetListInput) ([]entities.Banner, error) {
+func (b bannerStorage) ListBanner(ctx context.Context, filter paging.ParamsInput) ([]entities.Banner, error) {
 	result := make([]entities.Banner, 0)
 
 	db := wrap_gorm.GetDB()
 
 	query := db.Model(entities.Banner{})
 
-	paging.SetPagingQuery(&filter, entities.Banner{}.TableName(), query)
+	paging_query.SetPagingQuery(&filter, entities.Banner{}.TableName(), query)
 
 	err := query.Find(&result).Error
 	if err != nil {

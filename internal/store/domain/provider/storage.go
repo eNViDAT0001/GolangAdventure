@@ -12,7 +12,7 @@ type Storage interface {
 	GetProviderByID(ctx context.Context, provider uint) (entities.Provider, error)
 	UpdateProvider(ctx context.Context, providerID uint, input io.ProviderUpdateForm) error
 	DeleteProviderByIDs(ctx context.Context, providerID []uint) error
-	ListProviderByUserID(ctx context.Context, userID uint, filter paging.GetListInput) ([]entities.Provider, error)
+	ListProviderByUserID(ctx context.Context, userID uint, filter paging.ParamsInput) ([]entities.Provider, error)
 	ListProvider(ctx context.Context) ([]entities.Provider, error)
-	CountListProviderByUserID(ctx context.Context, userID uint, filter paging.GetListInput) (total int64, err error)
+	CountListProviderByUserID(ctx context.Context, userID uint, filter paging.ParamsInput) (total int64, err error)
 }

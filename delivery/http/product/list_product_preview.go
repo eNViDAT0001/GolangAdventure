@@ -3,6 +3,7 @@ package product
 import (
 	"context"
 	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_params"
 	"github.com/eNViDAT0001/Backend/external/request"
 	"github.com/eNViDAT0001/Backend/internal/product/domain/product/storage/io"
 	"github.com/eNViDAT0001/Backend/internal/product/entities"
@@ -16,7 +17,7 @@ func (s *productHandler) ListProductsPreview() func(ctx *gin.Context) {
 		cc := request.FromContext(c)
 		newCtx := context.Background()
 
-		paginator := paging.GetListInput{}
+		paginator := paging.ParamsInput{}
 		if err := cc.BindQuery(&paginator); err != nil {
 			cc.BadRequest(err)
 			return
@@ -26,13 +27,13 @@ func (s *productHandler) ListProductsPreview() func(ctx *gin.Context) {
 		fields := cc.QueryArray("fields[]")
 		sort := cc.QueryArray("sorts[]")
 
-		paginator.Filter = paging.NewFilterBuilder().
+		paginator.Filter = paging_params.NewFilterBuilder().
 			WithSearch(search).
 			WithFields(fields).
 			WithSorts(sort).
 			Build()
 
-		inValidField, val := paging.ValidateFilter(paginator.Filter, entities.Product{})
+		inValidField, val := paging_params.ValidateFilter(paginator.Filter, entities.Product{})
 		if len(inValidField) > 0 {
 			cc.ResponseError(request.NewBadRequestError(inValidField, val, "invalid key and value"))
 			return
@@ -64,7 +65,7 @@ func (s *productHandler) ListProductsPreview() func(ctx *gin.Context) {
 		}
 
 		paginator.Total = int(total)
-		if paginator.Type == paging.CURSOR_PAGING && len(products) > 0 {
+		if paginator.Type == paging.CursorPaging && len(products) > 0 {
 			paginator.Marker = int(products[len(products)-1].ID)
 		}
 		cc.OkPaging(paginator, products)

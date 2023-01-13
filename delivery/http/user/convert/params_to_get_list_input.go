@@ -6,8 +6,8 @@ import (
 	"github.com/jinzhu/copier"
 )
 
-func ParamsToGetListInput(input *ioHandler.GetUserListParams) (*paging.GetListInput, error) {
-	var result paging.GetListInput
+func ParamsToGetListInput(input *ioHandler.GetUserListParams) (*paging.ParamsInput, error) {
+	var result paging.ParamsInput
 	err := copier.Copy(&result, input)
 	if err != nil {
 		return nil, err

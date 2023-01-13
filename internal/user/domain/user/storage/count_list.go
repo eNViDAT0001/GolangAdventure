@@ -8,13 +8,13 @@ import (
 	"github.com/eNViDAT0001/Backend/internal/user/entities"
 )
 
-func (u userStorage) CountList(ctx context.Context, input *paging.GetListInput) (int64, error) {
+func (u userStorage) CountList(ctx context.Context, input *paging.ParamsInput) (int64, error) {
 	var count int64
 	db := wrap_gorm.GetDB()
 
 	query := db.Model(entities.User{})
 
-	if input.Type == paging.CURSOR_PAGING {
+	if input.Type == paging.CursorPaging {
 		query = query.Where("id > ?", input.Current())
 	}
 

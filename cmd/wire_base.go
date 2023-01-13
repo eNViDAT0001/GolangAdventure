@@ -17,7 +17,6 @@ import (
 	providerHttpHandlerPKG "github.com/eNViDAT0001/Backend/delivery/http/store/provider"
 
 	userHttpHandlerPKG "github.com/eNViDAT0001/Backend/delivery/http/user"
-	clientHttpHandlerPKG "github.com/eNViDAT0001/Backend/delivery/http/verification/client"
 	jwtHttpHandlerPKG "github.com/eNViDAT0001/Backend/delivery/http/verification/jwt"
 
 	userPKG "github.com/eNViDAT0001/Backend/internal/user/domain/user"
@@ -75,10 +74,6 @@ import (
 	jwtPKG "github.com/eNViDAT0001/Backend/internal/verification/domain/jwt"
 	jwtStoPKG "github.com/eNViDAT0001/Backend/internal/verification/domain/jwt/storage"
 	jwtUCPKG "github.com/eNViDAT0001/Backend/internal/verification/domain/jwt/usecase"
-
-	clientPKG "github.com/eNViDAT0001/Backend/internal/verification/domain/client"
-	clientStoPKG "github.com/eNViDAT0001/Backend/internal/verification/domain/client/storage"
-	clientUCPKG "github.com/eNViDAT0001/Backend/internal/verification/domain/client/usecase"
 
 	"github.com/google/wire"
 )
@@ -141,10 +136,6 @@ var IteratorCollection = wire.NewSet(
 	jwtUCPKG.NewJwtUseCase,
 	jwtStoPKG.NewJwtStorage,
 
-	clientHttpHandlerPKG.NewClientHandler,
-	clientUCPKG.NewClientStorage,
-	clientStoPKG.NewClientUseCase,
-
 	NewHandlerCollection,
 )
 
@@ -154,7 +145,6 @@ type HandlerCollection struct {
 	categoryHandler  categoryPKG.HttpHandler
 	appAccessHandler appAccessionPKG.HttpHandler
 	jwtHandler       jwtPKG.HttpHandler
-	clientHandler    clientPKG.HttpHandler
 	providerHandler  providerPKG.HttpHandler
 	bannerHandler    bannerPKG.HttpHandler
 	productHandler   productPKG.HttpHandler
@@ -172,7 +162,6 @@ func NewHandlerCollection(
 	categoryHandler categoryPKG.HttpHandler,
 	appAccessHandler appAccessionPKG.HttpHandler,
 	jwtHandler jwtPKG.HttpHandler,
-	clientHandler clientPKG.HttpHandler,
 	providerHandler providerPKG.HttpHandler,
 	productHandler productPKG.HttpHandler,
 	commentHandler commentPKG.HttpHandler,
@@ -188,7 +177,6 @@ func NewHandlerCollection(
 		appAccessHandler: appAccessHandler,
 		categoryHandler:  categoryHandler,
 		jwtHandler:       jwtHandler,
-		clientHandler:    clientHandler,
 		addressHandler:   addressHandler,
 		providerHandler:  providerHandler,
 		productHandler:   productHandler,

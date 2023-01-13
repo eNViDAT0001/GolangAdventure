@@ -1,4 +1,4 @@
-package paging
+package paging_params
 
 type EntityFilter interface {
 	WithFields() []string

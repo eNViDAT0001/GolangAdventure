@@ -23,11 +23,15 @@ func CreateProductReqToCreateProductForm(input *ioHttpHandler.ProductCreateReq) 
 		return result, err
 	}
 
+	err = copier.Copy(&result.Media, &input.Media)
+	if err != nil {
+		return result, err
+	}
+	//TODO :ChECK Please
 	err = copier.Copy(&result.Specifications, &input.Specifications)
 	if err != nil {
 		return result, err
 	}
-
 	err = copier.Copy(&result.Descriptions, &input.Descriptions)
 	if err != nil {
 		return result, err

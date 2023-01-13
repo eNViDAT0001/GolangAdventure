@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func (u providerUseCase) ListProviderByUserID(ctx context.Context, userID uint, filter paging.GetListInput) (providers []entities.Provider, total int64, err error) {
+func (u providerUseCase) ListProviderByUserID(ctx context.Context, userID uint, filter paging.ParamsInput) (providers []entities.Provider, total int64, err error) {
 	total, err = u.providerSto.CountListProviderByUserID(ctx, userID, filter)
 	if err != nil {
 		return nil, 0, err

@@ -3,11 +3,12 @@ package storage
 import (
 	"context"
 	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
 	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
 	"github.com/eNViDAT0001/Backend/internal/store/entities"
 )
 
-func (b bannerStorage) ListProductIDsByBannerID(ctx context.Context, bannerID uint, filter paging.GetListInput) ([]uint, error) {
+func (b bannerStorage) ListProductIDsByBannerID(ctx context.Context, bannerID uint, filter paging.ParamsInput) ([]uint, error) {
 	result := make([]uint, 0)
 
 	db := wrap_gorm.GetDB()
@@ -18,7 +19,7 @@ func (b bannerStorage) ListProductIDsByBannerID(ctx context.Context, bannerID ui
 		Where("Banner.id = ?", bannerID).
 		Where("Banner.deleted_at IS NULL")
 
-	paging.SetPagingQuery(&filter, entities.Banner{}.TableName(), query)
+	paging_query.SetPagingQuery(&filter, entities.Banner{}.TableName(), query)
 
 	err := query.Find(&result).Error
 	if err != nil {

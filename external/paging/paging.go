@@ -7,8 +7,11 @@ import (
 type PagingType string
 
 const (
-	CURSOR_PAGING PagingType = "cursor"
-	NUM_PAGING    PagingType = "page"
+	CursorPaging PagingType = "cursor"
+	NUM_PAGING   PagingType = "page"
+)
+const (
+	DefaultSize = 20
 )
 
 type Paging interface {
@@ -44,7 +47,7 @@ func NewPaginator(paging Paging) Paginator {
 		current = 1
 	}
 
-	if paging.PagingType() == CURSOR_PAGING {
+	if paging.PagingType() == CursorPaging {
 		return &CursorPaginator{
 			Count:   count,
 			PerPage: perPage,

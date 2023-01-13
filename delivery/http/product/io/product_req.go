@@ -18,7 +18,7 @@ type ProductCreateReq struct {
 	Name           string                               `json:"name"`
 	Discount       int                                  `json:"discount"`
 	Price          int                                  `json:"price"`
-	Media          []string                             `json:"media"`
+	Media          []ProductMediaCreateReq              `json:"media"`
 	Specifications []ProductSpecificationsCreateTreeReq `json:"specifications"`
 	Descriptions   []ProductDescriptionsCreateReq       `json:"descriptions"`
 }

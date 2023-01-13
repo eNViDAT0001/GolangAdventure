@@ -6,7 +6,7 @@ import (
 	"github.com/eNViDAT0001/Backend/internal/user/entities"
 )
 
-func (u userUseCase) GetUserList(ctx context.Context, input *paging.GetListInput) ([]*entities.User, error) {
+func (u userUseCase) GetUserList(ctx context.Context, input *paging.ParamsInput) ([]*entities.User, error) {
 	total, err := u.userSto.CountList(ctx, input)
 	if err != nil {
 		return nil, err
@@ -21,7 +21,7 @@ func (u userUseCase) GetUserList(ctx context.Context, input *paging.GetListInput
 
 	input.Total = int(total)
 
-	if input.Type == paging.CURSOR_PAGING {
+	if input.Type == paging.CursorPaging {
 		input.Marker = int(result[len(result)-1].ID)
 	}
 

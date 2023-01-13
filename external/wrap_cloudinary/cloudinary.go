@@ -14,18 +14,25 @@ func GetMediaServer() *cloudinary.Cloudinary {
 	if mediaServer != nil {
 		return mediaServer
 	}
-	mediaServer = newCloudinaryServer()
+
+	//mediaServer = newCloudinaryServer(
+	//	vp.GetString("CLOUDINARY_NAME"),
+	//	vp.GetString("CLOUDINARY_API_KEY"),
+	//	vp.GetString("CLOUDINARY_API_SECRET"))
+	mediaServer = newCloudinaryServer(
+		"damzcas3k",
+		"332611833886276",
+		"CApeUOYt-JIgUSj9LvSAs6rO610",
+		true)
 	return mediaServer
 }
-func newCloudinaryServer() *cloudinary.Cloudinary {
-	cloud := vp.GetString("CLOUDINARY.NAME")
-	key := vp.GetString("CLOUDINARY.API_KEY")
-	secret := vp.GetString("CLOUDINARY.API_SECRET")
+func newCloudinaryServer(cloud, key, secret string, secure bool) *cloudinary.Cloudinary {
+
 	cld, err := cloudinary.NewFromParams(cloud, key, secret)
 	if err != nil {
 		panic(err)
 	}
 
-	cld.Config.URL.Secure = vp.GetBool("CLOUDINARY.SECURE")
+	cld.Config.URL.Secure = secure
 	return cld
 }

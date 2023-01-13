@@ -1,13 +1,16 @@
 package io
 
-import "github.com/eNViDAT0001/Backend/external/paging"
+import (
+	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_params"
+)
 
 type GetUserListParams struct {
 	Marker int               `form:"marker"`
 	Limit  int               `form:"limit"`
 	Total  int               `form:"total"`
 	Type   paging.PagingType `form:"type"`
-	Filter paging.FilterList
+	Filter paging_params.FilterList
 }
 
 func (s GetUserListParams) PagingType() paging.PagingType {

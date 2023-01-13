@@ -9,16 +9,16 @@ import (
 )
 
 type Storage interface {
-	ListByUserID(ctx context.Context, userID uint, input paging.GetListInput) ([]entities.Order, error)
-	CountListByUserID(ctx context.Context, userID uint, input paging.GetListInput) (total int64, err error)
-	ListPreviewByUserID(ctx context.Context, userID uint, input paging.GetListInput) ([]io.OrderPreview, error)
-	CountPreviewByUserID(ctx context.Context, userID uint, input paging.GetListInput) (total int64, err error)
+	ListByUserID(ctx context.Context, userID uint, input paging.ParamsInput) ([]entities.Order, error)
+	CountListByUserID(ctx context.Context, userID uint, input paging.ParamsInput) (total int64, err error)
+	ListPreviewByUserID(ctx context.Context, userID uint, input paging.ParamsInput) ([]io.OrderPreview, error)
+	CountPreviewByUserID(ctx context.Context, userID uint, input paging.ParamsInput) (total int64, err error)
 
-	ListByProviderID(ctx context.Context, providerID uint, input paging.GetListInput) ([]entities.Order, error)
-	CountByProviderID(ctx context.Context, providerID uint, input paging.GetListInput) (total int64, err error)
+	ListByProviderID(ctx context.Context, providerID uint, input paging.ParamsInput) ([]entities.Order, error)
+	CountByProviderID(ctx context.Context, providerID uint, input paging.ParamsInput) (total int64, err error)
 
-	ListPreviewByProviderID(ctx context.Context, providerID uint, input paging.GetListInput) ([]io.OrderPreview, error)
-	CountPreviewByProviderID(ctx context.Context, providerID uint, input paging.GetListInput) (total int64, err error)
+	ListPreviewByProviderID(ctx context.Context, providerID uint, input paging.ParamsInput) ([]io.OrderPreview, error)
+	CountPreviewByProviderID(ctx context.Context, providerID uint, input paging.ParamsInput) (total int64, err error)
 
 	GetByOrderID(ctx context.Context, orderID uint) (entities.Order, error)
 

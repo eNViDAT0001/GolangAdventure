@@ -16,8 +16,8 @@ func (s *productHandler) CreateProduct() func(ctx *gin.Context) {
 		newCtx := context.Background()
 
 		var input ioHandler.ProductCreateReq
-		if err := cc.ShouldBind(&input); err != nil {
-			cc.BadRequest(err)
+		if err := cc.BindJSON(&input); err != nil {
+			cc.ResponseError(err)
 			return
 		}
 
@@ -37,6 +37,7 @@ func (s *productHandler) CreateProduct() func(ctx *gin.Context) {
 			cc.ResponseError(err)
 			return
 		}
+
 		result := map[string]interface{}{
 			"ProductID": productID,
 		}

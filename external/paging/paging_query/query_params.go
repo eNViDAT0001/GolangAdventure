@@ -1,13 +1,15 @@
-package paging
+package paging_query
 
 import (
 	"fmt"
+	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_params"
 	"github.com/eNViDAT0001/Backend/external/request"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )
 
-func GetPagingParams(cc *gin.Context, filter EntityFilter) (paginator GetListInput, err error) {
+func GetPagingParams(cc *gin.Context, filter paging_params.EntityFilter) (paginator paging.ParamsInput, err error) {
 	if err = cc.BindQuery(&paginator); err != nil {
 		return paginator, err
 	}
@@ -16,22 +18,22 @@ func GetPagingParams(cc *gin.Context, filter EntityFilter) (paginator GetListInp
 	fields := cc.QueryArray("fields[]")
 	sort := cc.QueryArray("sorts[]")
 
-	paginator.Filter = NewFilterBuilder().
+	paginator.Filter = paging_params.NewFilterBuilder().
 		WithSearch(search).
 		WithFields(fields).
 		WithSorts(sort).
 		Build()
 
-	inValidField, val := ValidateFilter(paginator.Filter, filter)
+	inValidField, val := paging_params.ValidateFilter(paginator.Filter, filter)
 	if len(inValidField) > 0 {
 		return paginator, request.NewBadRequestError(inValidField, val, "invalid key and value")
 	}
 	return paginator, err
 }
 
-func SetCountListPagingQuery(input *GetListInput, tableName string, query *gorm.DB) {
+func SetCountListPagingQuery(input *paging.ParamsInput, tableName string, query *gorm.DB) {
 
-	if input.Type == CURSOR_PAGING {
+	if input.Type == paging.CursorPaging {
 		query = query.Where(fmt.Sprintf("%s.id > ?", tableName), input.Current())
 	}
 
@@ -57,13 +59,13 @@ func SetCountListPagingQuery(input *GetListInput, tableName string, query *gorm.
 		}
 	}
 }
-func SetPagingQuery(input *GetListInput, tableName string, query *gorm.DB) {
+func SetPagingQuery(input *paging.ParamsInput, tableName string, query *gorm.DB) {
 
 	query = query.Limit(input.PerPage())
-	if input.Type == CURSOR_PAGING {
+	if input.Type == paging.CursorPaging {
 		query = query.Where(fmt.Sprintf("%s.id > ?", tableName), input.Current())
 	} else {
-		offset := Offset(input.Current(), input.PerPage())
+		offset := paging.Offset(input.Current(), input.PerPage())
 		query = query.Offset(offset)
 	}
 

@@ -2,6 +2,7 @@ package io
 
 import (
 	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_params"
 )
 
 type GetListInput struct {
@@ -9,7 +10,7 @@ type GetListInput struct {
 	Limit  int
 	Total  int
 	Type   paging.PagingType
-	Filter paging.FilterList
+	Filter paging_params.FilterList
 }
 
 func (s GetListInput) PagingType() paging.PagingType {

@@ -3,6 +3,7 @@ package cart
 import (
 	"context"
 	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
 	"github.com/eNViDAT0001/Backend/external/request"
 	"github.com/eNViDAT0001/Backend/internal/cart/entities"
 	"github.com/gin-gonic/gin"
@@ -15,7 +16,7 @@ func (s *cartHandler) ListCartByUserID() func(ctx *gin.Context) {
 		cc := request.FromContext(c)
 		newCtx := context.Background()
 
-		paginator, err := paging.GetPagingParams(cc.Context, entities.CartDetail{})
+		paginator, err := paging_query.GetPagingParams(cc.Context, entities.CartDetail{})
 		if err != nil {
 			cc.ResponseError(err)
 			return
@@ -38,7 +39,7 @@ func (s *cartHandler) ListCartByUserID() func(ctx *gin.Context) {
 		}
 
 		paginator.Total = int(total)
-		if paginator.Type == paging.CURSOR_PAGING && len(carts) > 0 {
+		if paginator.Type == paging.CursorPaging && len(carts) > 0 {
 			paginator.Marker = int(carts[len(carts)-1].ID)
 		}
 

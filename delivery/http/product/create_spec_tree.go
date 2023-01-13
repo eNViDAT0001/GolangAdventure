@@ -6,7 +6,6 @@ import (
 	ioHandler "github.com/eNViDAT0001/Backend/delivery/http/product/io"
 	"github.com/eNViDAT0001/Backend/external/request"
 	"github.com/gin-gonic/gin"
-	"gorm.io/gorm"
 	"strconv"
 )
 
@@ -44,22 +43,10 @@ func (s *productHandler) CreateSpecificationTree() func(ctx *gin.Context) {
 			return
 		}
 
-		specID, err := s.productUC.CreateSpecification(newCtx, inputUC[0])
+		err = s.productUC.CreateSpecificationTree(newCtx, inputUC)
 		if err != nil {
 			cc.ResponseError(err)
 			return
-		}
-		for i := 1; i < len(inputUC); i++ {
-			inputUC[i].Specification.SpecificationID = &specID
-			id, err := s.productUC.CreateSpecification(newCtx, inputUC[i])
-			if err != nil {
-				if err == gorm.ErrRegistered {
-					cc.Conflict(err)
-				}
-				cc.ResponseError(err)
-				return
-			}
-			specID = id
 		}
 
 		cc.Ok("Create Product Specification Success")

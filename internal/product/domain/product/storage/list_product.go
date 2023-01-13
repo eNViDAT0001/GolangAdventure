@@ -2,7 +2,7 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
 	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
 	"github.com/eNViDAT0001/Backend/internal/product/domain/product/storage/io"
 	"github.com/eNViDAT0001/Backend/internal/product/entities"
@@ -14,7 +14,7 @@ func (s productStorage) ListProduct(ctx context.Context, input io.ListProductInp
 
 	query := db.Model(entities.Product{})
 
-	paging.SetPagingQuery(&input.Paging, entities.Product{}.TableName(), query)
+	paging_query.SetPagingQuery(&input.Paging, entities.Product{}.TableName(), query)
 
 	if len(input.ProductIDs) > 0 {
 		query = query.Where("Product.id IN ?", input.ProductIDs)

@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func (u *commentUseCase) ListCommentByProductID(ctx context.Context, productID uint, filter paging.GetListInput) (comments []ioSto.CommentDetail, total int64, err error) {
+func (u *commentUseCase) ListCommentByProductID(ctx context.Context, productID uint, filter paging.ParamsInput) (comments []ioSto.CommentDetail, total int64, err error) {
 	total, err = u.commentSto.CountListCommentByProductID(ctx, productID, filter)
 	if err != nil {
 		return nil, 0, err

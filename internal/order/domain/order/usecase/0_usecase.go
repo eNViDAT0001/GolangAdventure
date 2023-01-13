@@ -14,7 +14,7 @@ type orderUseCase struct {
 	orderSto order.Storage
 }
 
-func (u *orderUseCase) ListByUserID(ctx context.Context, userID uint, input paging.GetListInput) (orders []entities.Order, total int64, err error) {
+func (u *orderUseCase) ListByUserID(ctx context.Context, userID uint, input paging.ParamsInput) (orders []entities.Order, total int64, err error) {
 	total, err = u.orderSto.CountListByUserID(ctx, userID, input)
 	if err != nil {
 		return nil, 0, err
@@ -30,7 +30,7 @@ func (u *orderUseCase) ListByUserID(ctx context.Context, userID uint, input pagi
 	return orders, total, err
 }
 
-func (u *orderUseCase) ListPreviewByUserID(ctx context.Context, userID uint, input paging.GetListInput) (orders []io.OrderPreview, total int64, err error) {
+func (u *orderUseCase) ListPreviewByUserID(ctx context.Context, userID uint, input paging.ParamsInput) (orders []io.OrderPreview, total int64, err error) {
 	total, err = u.orderSto.CountPreviewByUserID(ctx, userID, input)
 	if err != nil {
 		return nil, 0, err
@@ -46,7 +46,7 @@ func (u *orderUseCase) ListPreviewByUserID(ctx context.Context, userID uint, inp
 	return orders, total, err
 }
 
-func (u *orderUseCase) ListByProviderID(ctx context.Context, providerID uint, input paging.GetListInput) (orders []entities.Order, total int64, err error) {
+func (u *orderUseCase) ListByProviderID(ctx context.Context, providerID uint, input paging.ParamsInput) (orders []entities.Order, total int64, err error) {
 	total, err = u.orderSto.CountByProviderID(ctx, providerID, input)
 	if err != nil {
 		return nil, 0, err
@@ -62,7 +62,7 @@ func (u *orderUseCase) ListByProviderID(ctx context.Context, providerID uint, in
 	return orders, total, err
 }
 
-func (u *orderUseCase) ListPreviewByProviderID(ctx context.Context, providerID uint, input paging.GetListInput) (orders []io.OrderPreview, total int64, err error) {
+func (u *orderUseCase) ListPreviewByProviderID(ctx context.Context, providerID uint, input paging.ParamsInput) (orders []io.OrderPreview, total int64, err error) {
 	total, err = u.orderSto.CountPreviewByProviderID(ctx, providerID, input)
 	if err != nil {
 		return nil, 0, err

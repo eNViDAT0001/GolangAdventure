@@ -3,6 +3,7 @@ package provider
 import (
 	"context"
 	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
 	"github.com/eNViDAT0001/Backend/external/request"
 	"github.com/eNViDAT0001/Backend/internal/store/entities"
 	"github.com/gin-gonic/gin"
@@ -21,7 +22,7 @@ func (s providerHandler) ListProviderByUserID() func(*gin.Context) {
 			return
 		}
 
-		paginator, err := paging.GetPagingParams(cc.Context, entities.Provider{})
+		paginator, err := paging_query.GetPagingParams(cc.Context, entities.Provider{})
 		if err != nil {
 			cc.ResponseError(err)
 			return
@@ -38,7 +39,7 @@ func (s providerHandler) ListProviderByUserID() func(*gin.Context) {
 		}
 
 		paginator.Total = int(total)
-		if paginator.Type == paging.CURSOR_PAGING && len(providers) > 0 {
+		if paginator.Type == paging.CursorPaging && len(providers) > 0 {
 			paginator.Marker = int(providers[len(providers)-1].ID)
 		}
 

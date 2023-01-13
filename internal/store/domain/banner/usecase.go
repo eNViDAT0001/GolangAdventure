@@ -14,7 +14,7 @@ type UseCase interface {
 	GetBannerByID(ctx context.Context, bannerID uint) (io.BannerDetail, error)
 	UpdateBanner(ctx context.Context, bannerID uint, input io.BannerUpdateForm, productIDsIN []uint, productIDsOUT []uint) error
 	DeleteBannerByIDs(ctx context.Context, bannerID []uint) error
-	ListBanner(ctx context.Context, filter paging.GetListInput) (banners []entities.Banner, total int64, err error)
-	ListProductPreviewByBannerID(ctx context.Context, bannerID uint, filter paging.GetListInput) (products []ioSto.ProductPreviewItem, total int64, err error)
-	ListProductByBannerID(ctx context.Context, bannerID uint, filter paging.GetListInput) (products []productEntities.Product, total int64, err error)
+	ListBanner(ctx context.Context, filter paging.ParamsInput) (banners []entities.Banner, total int64, err error)
+	ListProductPreviewByBannerID(ctx context.Context, bannerID uint, filter paging.ParamsInput) (products []ioSto.ProductPreviewItem, total int64, err error)
+	ListProductByBannerID(ctx context.Context, bannerID uint, filter paging.ParamsInput) (products []productEntities.Product, total int64, err error)
 }

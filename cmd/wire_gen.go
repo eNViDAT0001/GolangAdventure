@@ -20,35 +20,32 @@ import (
 	"github.com/eNViDAT0001/Backend/delivery/http/store/category"
 	"github.com/eNViDAT0001/Backend/delivery/http/store/provider"
 	"github.com/eNViDAT0001/Backend/delivery/http/user"
-	"github.com/eNViDAT0001/Backend/delivery/http/verification/client"
 	"github.com/eNViDAT0001/Backend/delivery/http/verification/jwt"
 	storage2 "github.com/eNViDAT0001/Backend/internal/address/domain/address/storage"
 	usecase2 "github.com/eNViDAT0001/Backend/internal/address/domain/address/usecase"
-	usecase6 "github.com/eNViDAT0001/Backend/internal/app/domain/app_accession/usecase"
-	storage11 "github.com/eNViDAT0001/Backend/internal/cart/domain/cart/storage"
-	usecase12 "github.com/eNViDAT0001/Backend/internal/cart/domain/cart/usecase"
-	storage12 "github.com/eNViDAT0001/Backend/internal/cart/domain/cart_item/storage"
-	usecase13 "github.com/eNViDAT0001/Backend/internal/cart/domain/cart_item/usecase"
+	usecase5 "github.com/eNViDAT0001/Backend/internal/app/domain/app_accession/usecase"
+	storage10 "github.com/eNViDAT0001/Backend/internal/cart/domain/cart/storage"
+	usecase11 "github.com/eNViDAT0001/Backend/internal/cart/domain/cart/usecase"
+	storage11 "github.com/eNViDAT0001/Backend/internal/cart/domain/cart_item/storage"
+	usecase12 "github.com/eNViDAT0001/Backend/internal/cart/domain/cart_item/usecase"
 	storage7 "github.com/eNViDAT0001/Backend/internal/file_storage/domain/media/storage"
-	usecase9 "github.com/eNViDAT0001/Backend/internal/file_storage/domain/media/usecase"
-	storage13 "github.com/eNViDAT0001/Backend/internal/order/domain/order/storage"
-	usecase14 "github.com/eNViDAT0001/Backend/internal/order/domain/order/usecase"
-	storage14 "github.com/eNViDAT0001/Backend/internal/order/domain/order_item/storage"
-	usecase15 "github.com/eNViDAT0001/Backend/internal/order/domain/order_item/usecase"
-	storage9 "github.com/eNViDAT0001/Backend/internal/product/domain/comment/storage"
-	usecase10 "github.com/eNViDAT0001/Backend/internal/product/domain/comment/usecase"
+	usecase8 "github.com/eNViDAT0001/Backend/internal/file_storage/domain/media/usecase"
+	storage12 "github.com/eNViDAT0001/Backend/internal/order/domain/order/storage"
+	usecase13 "github.com/eNViDAT0001/Backend/internal/order/domain/order/usecase"
+	storage13 "github.com/eNViDAT0001/Backend/internal/order/domain/order_item/storage"
+	usecase14 "github.com/eNViDAT0001/Backend/internal/order/domain/order_item/usecase"
+	storage8 "github.com/eNViDAT0001/Backend/internal/product/domain/comment/storage"
+	usecase9 "github.com/eNViDAT0001/Backend/internal/product/domain/comment/usecase"
 	storage6 "github.com/eNViDAT0001/Backend/internal/product/domain/product/storage"
-	usecase8 "github.com/eNViDAT0001/Backend/internal/product/domain/product/usecase"
-	storage10 "github.com/eNViDAT0001/Backend/internal/store/domain/banner/storage"
-	usecase11 "github.com/eNViDAT0001/Backend/internal/store/domain/banner/usecase"
+	usecase7 "github.com/eNViDAT0001/Backend/internal/product/domain/product/usecase"
+	storage9 "github.com/eNViDAT0001/Backend/internal/store/domain/banner/storage"
+	usecase10 "github.com/eNViDAT0001/Backend/internal/store/domain/banner/usecase"
 	storage3 "github.com/eNViDAT0001/Backend/internal/store/domain/category/storage"
 	usecase3 "github.com/eNViDAT0001/Backend/internal/store/domain/category/usecase"
 	storage5 "github.com/eNViDAT0001/Backend/internal/store/domain/provider/storage"
-	usecase7 "github.com/eNViDAT0001/Backend/internal/store/domain/provider/usecase"
+	usecase6 "github.com/eNViDAT0001/Backend/internal/store/domain/provider/usecase"
 	"github.com/eNViDAT0001/Backend/internal/user/domain/user/storage"
 	"github.com/eNViDAT0001/Backend/internal/user/domain/user/usecase"
-	storage8 "github.com/eNViDAT0001/Backend/internal/verification/domain/client/storage"
-	usecase5 "github.com/eNViDAT0001/Backend/internal/verification/domain/client/usecase"
 	storage4 "github.com/eNViDAT0001/Backend/internal/verification/domain/jwt/storage"
 	usecase4 "github.com/eNViDAT0001/Backend/internal/verification/domain/jwt/usecase"
 )
@@ -59,47 +56,44 @@ func initHandlerCollection() *HandlerCollection {
 	userStorage := storage.NewUserStorage()
 	useCase := usecase.NewUserUseCase(userStorage)
 	httpHandler := user.NewUserHandler(useCase)
-	storage15 := storage2.NewAddressStorage()
-	userUseCase := usecase2.NewAddressUseCase(storage15)
+	storage14 := storage2.NewAddressStorage()
+	userUseCase := usecase2.NewAddressUseCase(storage14)
 	userHttpHandler := address.NewAddressHandler(userUseCase)
 	categoryStorage := storage3.NewCategoryStorage()
 	categoryUseCase := usecase3.NewCategoryUseCase(categoryStorage)
 	categoryHttpHandler := category.NewCategoryHandler(categoryUseCase)
 	jwtStorage := storage4.NewJwtStorage()
 	jwtUseCase := usecase4.NewJwtUseCase(userStorage, jwtStorage)
-	storage16 := usecase5.NewClientStorage()
-	app_accessionUseCase := usecase6.NewAppAccessionUseCase(storage16, userStorage, jwtStorage)
+	app_accessionUseCase := usecase5.NewAppAccessionUseCase(userStorage, jwtStorage)
 	app_accessionHttpHandler := app_accession.NewAppAccessionHandler(jwtUseCase, useCase, app_accessionUseCase)
 	providerStorage := storage5.NewProviderStorage()
-	providerUseCase := usecase7.NewProviderUseCase(providerStorage)
+	providerUseCase := usecase6.NewProviderUseCase(providerStorage)
 	productStorage := storage6.NewProductStorage()
 	mediaStorage := storage7.NewMediaStorage()
-	productUseCase := usecase8.NewProductUseCase(productStorage, mediaStorage)
+	productUseCase := usecase7.NewProductUseCase(productStorage, mediaStorage)
 	jwtHttpHandler := jwt.NewJwtHandler(jwtUseCase, useCase, providerUseCase, productUseCase)
-	useCase2 := storage8.NewClientUseCase(storage16)
-	httpHandler2 := client.NewClientHandler(useCase2)
 	providerHttpHandler := provider.NewProviderHandler(providerUseCase)
-	mediaUseCase := usecase9.NewMediaUseCase(mediaStorage)
+	mediaUseCase := usecase8.NewMediaUseCase(mediaStorage)
 	productHttpHandler := product.NewProductHandler(productUseCase, mediaUseCase, categoryUseCase)
-	commentStorage := storage9.NewCommentStorage()
-	commentUseCase := usecase10.NewCommentUseCase(commentStorage, mediaStorage)
+	commentStorage := storage8.NewCommentStorage()
+	commentUseCase := usecase9.NewCommentUseCase(commentStorage, mediaStorage)
 	commentHttpHandler := comment.NewCommentHandler(commentUseCase)
 	mediaHttpHandler := app_file.NewMediaHandler(mediaUseCase)
-	bannerStorage := storage10.NewBannerStorage()
-	bannerUseCase := usecase11.NewBannerUseCase(bannerStorage, productStorage)
+	bannerStorage := storage9.NewBannerStorage()
+	bannerUseCase := usecase10.NewBannerUseCase(bannerStorage, productStorage)
 	bannerHttpHandler := banner.NewBannerHandler(bannerUseCase)
-	cartStorage := storage11.NewCartStorage()
-	cartUseCase := usecase12.NewCartUseCase(cartStorage)
+	cartStorage := storage10.NewCartStorage()
+	cartUseCase := usecase11.NewCartUseCase(cartStorage)
 	cartHttpHandler := cart.NewCartHandler(cartUseCase)
-	cart_itemStorage := storage12.NewCartItemStorage()
-	cart_itemUseCase := usecase13.NewCartItemUseCase(cart_itemStorage)
+	cart_itemStorage := storage11.NewCartItemStorage()
+	cart_itemUseCase := usecase12.NewCartItemUseCase(cart_itemStorage)
 	cart_itemHttpHandler := cart_items.NewCartItemHandler(cart_itemUseCase)
-	orderStorage := storage13.NewOrderStorage()
-	orderUseCase := usecase14.NewOrderUseCase(orderStorage)
+	orderStorage := storage12.NewOrderStorage()
+	orderUseCase := usecase13.NewOrderUseCase(orderStorage)
 	orderHttpHandler := order.NewOrderHandler(orderUseCase)
-	order_itemStorage := storage14.NewOrderItemStorage()
-	order_itemUseCase := usecase15.NewOrderItemUseCase(order_itemStorage)
+	order_itemStorage := storage13.NewOrderItemStorage()
+	order_itemUseCase := usecase14.NewOrderItemUseCase(order_itemStorage)
 	order_itemHttpHandler := order_items.NewOrderItemHandler(order_itemUseCase)
-	handlerCollection := NewHandlerCollection(httpHandler, userHttpHandler, categoryHttpHandler, app_accessionHttpHandler, jwtHttpHandler, httpHandler2, providerHttpHandler, productHttpHandler, commentHttpHandler, mediaHttpHandler, bannerHttpHandler, cartHttpHandler, cart_itemHttpHandler, orderHttpHandler, order_itemHttpHandler)
+	handlerCollection := NewHandlerCollection(httpHandler, userHttpHandler, categoryHttpHandler, app_accessionHttpHandler, jwtHttpHandler, providerHttpHandler, productHttpHandler, commentHttpHandler, mediaHttpHandler, bannerHttpHandler, cartHttpHandler, cart_itemHttpHandler, orderHttpHandler, order_itemHttpHandler)
 	return handlerCollection
 }

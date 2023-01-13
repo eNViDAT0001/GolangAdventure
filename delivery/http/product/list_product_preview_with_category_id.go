@@ -3,6 +3,7 @@ package product
 import (
 	"context"
 	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
 	"github.com/eNViDAT0001/Backend/external/request"
 	"github.com/eNViDAT0001/Backend/internal/product/domain/product/storage/io"
 	"github.com/eNViDAT0001/Backend/internal/product/entities"
@@ -16,7 +17,7 @@ func (s *productHandler) ListProductPreviewWithCategoryID() func(ctx *gin.Contex
 		cc := request.FromContext(c)
 		newCtx := context.Background()
 
-		paginator, err := paging.GetPagingParams(cc.Context, entities.Product{})
+		paginator, err := paging_query.GetPagingParams(cc.Context, entities.Product{})
 		if err != nil {
 			cc.BadRequest(err)
 			return
@@ -55,7 +56,7 @@ func (s *productHandler) ListProductPreviewWithCategoryID() func(ctx *gin.Contex
 		}
 
 		paginator.Total = int(total)
-		if paginator.Type == paging.CURSOR_PAGING && len(products) > 0 {
+		if paginator.Type == paging.CursorPaging && len(products) > 0 {
 			paginator.Marker = int(products[len(products)-1].ID)
 		}
 		cc.OkPaging(paginator, products)

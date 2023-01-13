@@ -9,11 +9,11 @@ import (
 )
 
 type UseCase interface {
-	ListByUserID(ctx context.Context, userID uint, input paging.GetListInput) (orders []entities.Order, total int64, err error)
-	ListPreviewByUserID(ctx context.Context, userID uint, input paging.GetListInput) (orders []io.OrderPreview, total int64, err error)
+	ListByUserID(ctx context.Context, userID uint, input paging.ParamsInput) (orders []entities.Order, total int64, err error)
+	ListPreviewByUserID(ctx context.Context, userID uint, input paging.ParamsInput) (orders []io.OrderPreview, total int64, err error)
 
-	ListByProviderID(ctx context.Context, providerID uint, input paging.GetListInput) (orders []entities.Order, total int64, err error)
-	ListPreviewByProviderID(ctx context.Context, providerID uint, input paging.GetListInput) (orders []io.OrderPreview, total int64, err error)
+	ListByProviderID(ctx context.Context, providerID uint, input paging.ParamsInput) (orders []entities.Order, total int64, err error)
+	ListPreviewByProviderID(ctx context.Context, providerID uint, input paging.ParamsInput) (orders []io.OrderPreview, total int64, err error)
 
 	GetByOrderID(ctx context.Context, orderID uint) (entities.Order, error)
 

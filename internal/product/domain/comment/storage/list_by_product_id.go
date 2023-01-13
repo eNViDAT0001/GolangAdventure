@@ -3,12 +3,13 @@ package storage
 import (
 	"context"
 	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
 	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
 	"github.com/eNViDAT0001/Backend/internal/product/domain/comment/storage/io"
 	"github.com/eNViDAT0001/Backend/internal/product/entities"
 )
 
-func (c commentStorage) ListCommentByProductID(ctx context.Context, productID uint, filter paging.GetListInput) ([]io.CommentDetail, error) {
+func (c commentStorage) ListCommentByProductID(ctx context.Context, productID uint, filter paging.ParamsInput) ([]io.CommentDetail, error) {
 	result := make([]io.CommentDetail, 0)
 	db := wrap_gorm.GetDB()
 
@@ -20,7 +21,7 @@ func (c commentStorage) ListCommentByProductID(ctx context.Context, productID ui
 		Where("Comment.deleted_at IS NULL").
 		Group("Comment.id")
 
-	paging.SetPagingQuery(&filter, entities.Comment{}.TableName(), query)
+	paging_query.SetPagingQuery(&filter, entities.Comment{}.TableName(), query)
 
 	err := query.Scan(&result).Error
 	if err != nil {

@@ -8,7 +8,7 @@ import (
 
 type Storage interface {
 	GetDetailByID(ctx context.Context, cartID uint) (entities.CartDetail, error)
-	ListCartByUserID(ctx context.Context, userID uint, filter paging.GetListInput) ([]entities.CartDetail, error)
-	CountListCartByUserID(ctx context.Context, userID uint, filter paging.GetListInput) (total int64, err error)
+	ListCartByUserID(ctx context.Context, userID uint, filter paging.ParamsInput) ([]entities.CartDetail, error)
+	CountListCartByUserID(ctx context.Context, userID uint, filter paging.ParamsInput) (total int64, err error)
 	DeleteCart(ctx context.Context, userID uint, cartID uint) error
 }

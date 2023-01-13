@@ -2,7 +2,7 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
 	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
 	"github.com/eNViDAT0001/Backend/internal/product/domain/product/storage/io"
 	"github.com/eNViDAT0001/Backend/internal/product/entities"
@@ -17,7 +17,7 @@ func (s productStorage) ListCountProductsPreview(ctx context.Context, input io.L
 		Where("Product.deleted_at IS NULL").
 		Group("Product.id")
 
-	paging.SetCountListPagingQuery(&input.Paging, entities.Product{}.TableName(), query)
+	paging_query.SetCountListPagingQuery(&input.Paging, entities.Product{}.TableName(), query)
 
 	if len(input.ProductIDs) > 0 {
 		query = query.Where("Product.id IN ?", input.ProductIDs)

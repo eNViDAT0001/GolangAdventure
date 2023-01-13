@@ -1,4 +1,4 @@
-package paging
+package paging_params
 
 type filterList struct {
 	Fields *map[string]string

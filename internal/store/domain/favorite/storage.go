@@ -9,5 +9,5 @@ import (
 type Storage interface {
 	AddFavorite(ctx context.Context, userID uint, providerID uint) error
 	DeleteFavorite(ctx context.Context, userID uint, providerID uint) error
-	ListFavoriteByUserID(ctx context.Context, userID uint, filter paging.GetListInput) ([]entities.Provider, error)
+	ListFavoriteByUserID(ctx context.Context, userID uint, filter paging.ParamsInput) ([]entities.Provider, error)
 }

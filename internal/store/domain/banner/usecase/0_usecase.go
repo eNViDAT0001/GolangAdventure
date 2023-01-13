@@ -33,7 +33,7 @@ func (u bannerUseCase) DeleteBannerByIDs(ctx context.Context, bannerID []uint) e
 	return u.bannerSto.DeleteBannerByIDs(ctx, bannerID)
 }
 
-func (u bannerUseCase) ListBanner(ctx context.Context, filter paging.GetListInput) (banners []entities.Banner, total int64, err error) {
+func (u bannerUseCase) ListBanner(ctx context.Context, filter paging.ParamsInput) (banners []entities.Banner, total int64, err error) {
 	total, err = u.bannerSto.CountListBanner(ctx, filter, 0)
 	if err != nil {
 		return nil, 0, err
@@ -49,7 +49,7 @@ func (u bannerUseCase) ListBanner(ctx context.Context, filter paging.GetListInpu
 	return banners, total, err
 }
 
-func (u bannerUseCase) ListProductPreviewByBannerID(ctx context.Context, bannerID uint, filter paging.GetListInput) (products []ioProductSto.ProductPreviewItem, total int64, err error) {
+func (u bannerUseCase) ListProductPreviewByBannerID(ctx context.Context, bannerID uint, filter paging.ParamsInput) (products []ioProductSto.ProductPreviewItem, total int64, err error) {
 	productIDs, err := u.bannerSto.ListProductIDsByBannerID(ctx, bannerID, filter)
 	if len(productIDs) < 1 {
 		return nil, 0, gorm.ErrRecordNotFound
@@ -70,7 +70,7 @@ func (u bannerUseCase) ListProductPreviewByBannerID(ctx context.Context, bannerI
 
 	return products, total, err
 }
-func (u bannerUseCase) ListProductByBannerID(ctx context.Context, bannerID uint, filter paging.GetListInput) (products []productEntities.Product, total int64, err error) {
+func (u bannerUseCase) ListProductByBannerID(ctx context.Context, bannerID uint, filter paging.ParamsInput) (products []productEntities.Product, total int64, err error) {
 	productIDs, err := u.bannerSto.ListProductIDsByBannerID(ctx, bannerID, filter)
 	if len(productIDs) < 1 {
 		return nil, 0, gorm.ErrRecordNotFound

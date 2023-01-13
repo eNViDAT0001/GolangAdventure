@@ -13,7 +13,7 @@ type ProductDescriptionsWithFileUpdateReq struct {
 	File *multipart.FileHeader `form:"descriptions_path"`
 }
 type ProductDescriptionsCreateReq struct {
-	PublicID uint   `json:"public_id"`
+	PublicID string `json:"public_id"`
 	Name     string `json:"name"`
 	File     string `json:"path"`
 }
