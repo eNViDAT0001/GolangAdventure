@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Jan 08, 2023 at 07:08 AM
+-- Generation Time: Jan 30, 2023 at 04:30 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.19
 
@@ -20,24 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `ecommerce_db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Account`
---
-
-CREATE TABLE `Account` (
-  `id` bigint UNSIGNED NOT NULL,
-  `provider_id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `short_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `logo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `account` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `delete_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -328,25 +310,6 @@ CREATE TABLE `CommentMedia` (
   `public_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `media_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `media_type` enum('IMAGE','VIDEO') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Discount`
---
-
-CREATE TABLE `Discount` (
-  `id` bigint UNSIGNED NOT NULL,
-  `provider_id` bigint UNSIGNED NOT NULL,
-  `category_id` bigint UNSIGNED DEFAULT NULL,
-  `voucher` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `discount` int NOT NULL,
-  `membership` tinyint(1) NOT NULL DEFAULT '0',
-  `end_time` date NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL
@@ -1085,6 +1048,25 @@ INSERT INTO `Districts` (`code`, `name`, `name_en`, `full_name`, `full_name_en`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Favorite`
+--
+
+CREATE TABLE `Favorite` (
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `provider_id` bigint UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `Favorite`
+--
+
+INSERT INTO `Favorite` (`id`, `user_id`, `provider_id`) VALUES
+(1, 1, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Order`
 --
 
@@ -1195,7 +1177,9 @@ INSERT INTO `Product` (`id`, `provider_id`, `category_id`, `user_id`, `name`, `p
 (11, 7, 1, 1, 'Áo nữ cute phô mai que', 95000, 30, '2022-12-30 09:50:53', '2022-12-30 09:50:53', NULL),
 (12, 7, 1, 1, 'Áo nữ cute phô mai que ver 2', 95000, 30, '2022-12-30 09:51:06', '2022-12-30 09:51:06', NULL),
 (15, 2, 1, 1, '1', 1, 1, '2023-01-06 12:06:17', '2023-01-06 12:06:17', NULL),
-(16, 2, 1, 1, '1', 1, 1, '2023-01-06 12:06:55', '2023-01-06 12:06:55', NULL);
+(16, 2, 1, 1, '1', 1, 1, '2023-01-06 12:06:55', '2023-01-06 12:06:55', NULL),
+(20, 2, 1, 1, 'abc', 20000, 20, '2023-01-10 00:25:39', '2023-01-10 00:25:39', NULL),
+(21, 2, 1, 1, 'abc', 20000, 20, '2023-01-10 01:27:32', '2023-01-10 01:27:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -1224,7 +1208,9 @@ INSERT INTO `ProductDescriptions` (`id`, `product_id`, `name`, `public_id`, `des
 (3, 9, 'test', 'ProductDescriptions/cho3k9i2dc9yftdhlkya', 'http://res.cloudinary.com/damzcas3k/raw/upload/v1672393797/ProductDescriptions/cho3k9i2dc9yftdhlkya', '2022-12-30 09:49:56', '2022-12-30 09:49:56', NULL),
 (4, 10, 'test', 'ProductDescriptions/sr9nqkhyg82avwfylbqo', 'http://res.cloudinary.com/damzcas3k/raw/upload/v1672393811/ProductDescriptions/sr9nqkhyg82avwfylbqo', '2022-12-30 09:50:11', '2022-12-30 09:50:11', NULL),
 (5, 11, 'test', 'ProductDescriptions/czzbfti91suaoojhourh', 'http://res.cloudinary.com/damzcas3k/raw/upload/v1672393856/ProductDescriptions/czzbfti91suaoojhourh', '2022-12-30 09:50:55', '2022-12-30 09:50:55', NULL),
-(6, 12, 'test', 'ProductDescriptions/nhor9db5slwlaanj4j7i', 'http://res.cloudinary.com/damzcas3k/raw/upload/v1672393868/ProductDescriptions/nhor9db5slwlaanj4j7i', '2022-12-30 09:51:07', '2022-12-30 09:51:07', NULL);
+(6, 12, 'test', 'ProductDescriptions/nhor9db5slwlaanj4j7i', 'http://res.cloudinary.com/damzcas3k/raw/upload/v1672393868/ProductDescriptions/nhor9db5slwlaanj4j7i', '2022-12-30 09:51:07', '2022-12-30 09:51:07', NULL),
+(8, 20, 'abc', 'xyz', '', '2023-01-10 00:25:40', '2023-01-10 00:25:40', NULL),
+(9, 21, 'abc', 'xyz', '', '2023-01-10 01:27:32', '2023-01-10 01:27:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -1258,7 +1244,9 @@ INSERT INTO `ProductMedia` (`id`, `product_id`, `public_id`, `media_path`, `medi
 (8, 11, 'Product/sgslhzidjx6ffjyhnxro', 'http://res.cloudinary.com/damzcas3k/image/upload/v1672393855/Product/sgslhzidjx6ffjyhnxro.jpg', 'IMAGE', '2022-12-30 09:50:55', '2022-12-30 09:50:55', NULL),
 (9, 12, 'Product/xtfibx615kxet8mbl182', 'http://res.cloudinary.com/damzcas3k/image/upload/v1672393867/Product/xtfibx615kxet8mbl182.jpg', 'IMAGE', '2022-12-30 09:51:07', '2022-12-30 09:51:07', NULL),
 (10, 15, 'Product/ks94koekpxlqnxvt1p6v', 'http://res.cloudinary.com/damzcas3k/image/upload/v1673006781/Product/ks94koekpxlqnxvt1p6v.png', 'IMAGE', '2023-01-06 12:06:21', '2023-01-06 12:06:21', NULL),
-(11, 16, 'Product/geiekkzljbbtlptqqjmp', 'http://res.cloudinary.com/damzcas3k/image/upload/v1673006819/Product/geiekkzljbbtlptqqjmp.png', 'IMAGE', '2023-01-06 12:06:59', '2023-01-06 12:06:59', NULL);
+(11, 16, 'Product/geiekkzljbbtlptqqjmp', 'http://res.cloudinary.com/damzcas3k/image/upload/v1673006819/Product/geiekkzljbbtlptqqjmp.png', 'IMAGE', '2023-01-06 12:06:59', '2023-01-06 12:06:59', NULL),
+(12, 20, 'xyz', 'mnp', 'IMAGE', '2023-01-10 00:25:39', '2023-01-10 00:25:39', NULL),
+(13, 21, 'xyz', 'mnp', 'IMAGE', '2023-01-10 01:27:32', '2023-01-10 01:27:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -1289,7 +1277,9 @@ INSERT INTO `ProductOption` (`id`, `product_id`, `specification_id`, `name`, `pr
 (15, 12, 6, 'Đỏ, XXXL', 50000, 100, '2023-01-01 10:16:23', '2023-01-01 10:16:23', NULL),
 (16, 12, 6, 'Đen, X', 20000, 100, '2023-01-01 10:16:23', '2023-01-01 10:16:23', NULL),
 (17, 12, 6, 'Đen, XL', 30000, 100, '2023-01-01 10:16:23', '2023-01-01 10:16:23', NULL),
-(18, 12, 6, 'Đen, XXL', 40000, 100, '2023-01-01 10:16:23', '2023-01-01 10:16:23', NULL);
+(18, 12, 6, 'Đen, XXL', 40000, 100, '2023-01-01 10:16:23', '2023-01-01 10:16:23', NULL),
+(22, 1, 9, 'Him', 20000, 100, '2023-01-10 00:12:22', '2023-01-10 00:12:22', NULL),
+(23, 1, 10, 'Him', 20000, 100, '2023-01-10 00:12:22', '2023-01-10 00:12:22', NULL);
 
 -- --------------------------------------------------------
 
@@ -1312,7 +1302,10 @@ CREATE TABLE `ProductSpecification` (
 --
 
 INSERT INTO `ProductSpecification` (`id`, `specification_id`, `product_id`, `properties`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(6, NULL, 12, 'Màu, Size', '2023-01-01 10:16:23', '2023-01-01 10:16:23', NULL);
+(6, NULL, 12, 'Màu, Size', '2023-01-01 10:16:23', '2023-01-01 10:16:23', NULL),
+(9, NULL, 1, 'Hường xuân', '2023-01-10 00:12:21', '2023-01-10 00:12:21', NULL),
+(10, 9, 1, 'Hạ mùa', '2023-01-10 00:12:22', '2023-01-10 00:12:22', NULL),
+(11, NULL, 21, '', '2023-01-10 01:27:32', '2023-01-10 01:27:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -1335,12 +1328,14 @@ CREATE TABLE `Provider` (
 --
 
 INSERT INTO `Provider` (`id`, `user_id`, `name`, `image_path`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 1, 'Thần Bài', 'https://img.etimg.com/thumb/width-1200,height-900,imgsize-122620,resizemode-1,msid-75214721/industry/services/retail/future-group-negotiates-rents-for-its-1700-stores.jpg', '2022-12-16 00:54:44', '2022-12-16 00:54:44', NULL),
+(2, 1, 'Thần Bài', 'https://img.etimg.com/thumb/width-1200,height-900,imgsize-122620,resizemode-1,msid-75214721/industry/services/retail/future-group-negotiates-rents-for-its-1700-stores.jpg', '2022-12-16 00:54:44', '2022-12-16 00:54:44', '2023-01-30 13:35:10'),
 (3, 1, 'Thiên Lợi', 'https://img.freepik.com/free-vector/shop-with-we-are-open-sign_23-2148557016.jpg?w=2000', '2022-12-16 00:55:05', '2022-12-16 00:55:05', NULL),
 (4, 1, 'Ngẫu Trùng', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxwHLbVDRABAok4N222HgTdjHQfdZftcvO8w&usqp=CAU', '2022-12-16 00:55:05', '2022-12-16 00:55:05', NULL),
 (7, 1, 'Chi nhánh 1', 'https://hanoispiritofplace.com/wp-content/uploads/2017/06/hinh-nen-conan-edogawa-58.jpg', '2022-12-30 09:47:57', '2022-12-30 09:47:57', NULL),
 (8, 1, 'Chi nhánh 2', 'http://res.cloudinary.com/damzcas3k/image/upload/v1672393692/Product/i6stmcr9gnqvsvhbkjwt.jpg', '2022-12-30 09:48:15', '2022-12-30 09:48:15', NULL),
-(9, 1, 'Chi nhánh thần bài 3', 'https://toigingiuvedep.vn/wp-content/uploads/2022/02/anh-than-bai.jpg', '2022-12-30 14:15:20', '2022-12-30 14:15:20', NULL);
+(9, 1, 'Chi nhánh thần bài 3', 'https://toigingiuvedep.vn/wp-content/uploads/2022/02/anh-than-bai.jpg', '2022-12-30 14:15:20', '2022-12-30 14:15:20', NULL),
+(10, 1, 'admin', 'https://res.cloudinary.com/damzcas3k/image/upload/v1671291124/Product/cyydihkdpdhdv7ktlq5e.png', '2023-01-30 13:20:17', '2023-01-30 13:20:17', NULL),
+(11, 1, 'admin', 'https://res.cloudinary.com/damzcas3k/image/upload/v1671291124/Product/cyydihkdpdhdv7ktlq5e.png', '2023-01-30 13:35:49', '2023-01-30 13:35:49', NULL);
 
 -- --------------------------------------------------------
 
@@ -12115,13 +12110,6 @@ INSERT INTO `Wards` (`code`, `name`, `name_en`, `full_name`, `full_name_en`, `co
 --
 
 --
--- Indexes for table `Account`
---
-ALTER TABLE `Account`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `Account_ibfk_1` (`provider_id`);
-
---
 -- Indexes for table `Address`
 --
 ALTER TABLE `Address`
@@ -12198,20 +12186,18 @@ ALTER TABLE `CommentMedia`
   ADD KEY `comment_id` (`comment_id`);
 
 --
--- Indexes for table `Discount`
---
-ALTER TABLE `Discount`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `category_id` (`category_id`),
-  ADD KEY `provider_id` (`provider_id`);
-
---
 -- Indexes for table `Districts`
 --
 ALTER TABLE `Districts`
   ADD PRIMARY KEY (`code`),
   ADD KEY `districts_administrative_unit_id_fkey` (`administrative_unit_id`),
   ADD KEY `districts_province_code_fkey` (`province_code`);
+
+--
+-- Indexes for table `Favorite`
+--
+ALTER TABLE `Favorite`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `Order`
@@ -12291,7 +12277,10 @@ ALTER TABLE `Provinces`
 -- Indexes for table `User`
 --
 ALTER TABLE `User`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `phone` (`phone`);
 
 --
 -- Indexes for table `Wards`
@@ -12304,12 +12293,6 @@ ALTER TABLE `Wards`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `Account`
---
-ALTER TABLE `Account`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Address`
@@ -12354,10 +12337,10 @@ ALTER TABLE `CommentMedia`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `Discount`
+-- AUTO_INCREMENT for table `Favorite`
 --
-ALTER TABLE `Discount`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `Favorite`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `Order`
@@ -12375,37 +12358,37 @@ ALTER TABLE `OrderItem`
 -- AUTO_INCREMENT for table `Product`
 --
 ALTER TABLE `Product`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `ProductDescriptions`
 --
 ALTER TABLE `ProductDescriptions`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `ProductMedia`
 --
 ALTER TABLE `ProductMedia`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `ProductOption`
 --
 ALTER TABLE `ProductOption`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `ProductSpecification`
 --
 ALTER TABLE `ProductSpecification`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `Provider`
 --
 ALTER TABLE `Provider`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `User`
@@ -12416,12 +12399,6 @@ ALTER TABLE `User`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `Account`
---
-ALTER TABLE `Account`
-  ADD CONSTRAINT `Account_ibfk_1` FOREIGN KEY (`provider_id`) REFERENCES `Provider` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Address`
@@ -12481,13 +12458,6 @@ ALTER TABLE `CommentMedia`
   ADD CONSTRAINT `CommentMedia_ibfk_1` FOREIGN KEY (`comment_id`) REFERENCES `Comment` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `Discount`
---
-ALTER TABLE `Discount`
-  ADD CONSTRAINT `Discount_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `Category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `Discount_ibfk_2` FOREIGN KEY (`provider_id`) REFERENCES `Provider` (`id`);
-
---
 -- Constraints for table `Districts`
 --
 ALTER TABLE `Districts`
@@ -12516,8 +12486,7 @@ ALTER TABLE `OrderItem`
 ALTER TABLE `Product`
   ADD CONSTRAINT `Product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `Category` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `Product_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `User` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `Product_ibfk_5` FOREIGN KEY (`provider_id`) REFERENCES `Provider` (`id`),
-  ADD CONSTRAINT `Product_ibfk_6` FOREIGN KEY (`provider_id`) REFERENCES `Provider` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `Product_ibfk_5` FOREIGN KEY (`provider_id`) REFERENCES `Provider` (`id`);
 
 --
 -- Constraints for table `ProductDescriptions`

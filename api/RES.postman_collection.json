@@ -18,7 +18,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"pm.test(\"Status code is 200\", () => {",
 											"    const resJson = pm.response.json();",
@@ -28,7 +27,8 @@
 											"    console.log(pm.variables.get(\"refresh_token\"));",
 											"    pm.expect(pm.response.code).to.eql(200);",
 											"});"
-										]
+										],
+										"type": "text/javascript"
 									}
 								}
 							],
@@ -40,7 +40,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"eNViDAT\",\n    \"password\": \"admin\"\n}",
+									"raw": "{\n    \"username\": \"eNViDXT\",\n    \"password\": \"admin\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -393,6 +393,7 @@
 								{
 									"key": "fields[]",
 									"value": "phone_0775702201",
+									"description": "\"username\", \"name\", \"gender\", \"email\", \"phone\", \"type\"",
 									"disabled": true
 								},
 								{
@@ -403,6 +404,7 @@
 								{
 									"key": "search[]",
 									"value": "gender_true",
+									"description": "\"birthday\", \"username\", \"name\", \"gender\", \"email\", \"phone\", \"type\"",
 									"disabled": true
 								},
 								{
@@ -413,6 +415,7 @@
 								{
 									"key": "sorts[]",
 									"value": "",
+									"description": "\"username\", \"name\", \"gender\", \"email\", \"phone\", \"type\", \"id\"",
 									"disabled": true
 								},
 								{
@@ -480,7 +483,7 @@
 					"response": []
 				},
 				{
-					"name": "User",
+					"name": "User (Admin Role)",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -519,6 +522,134 @@
 							],
 							"path": [
 								":user_id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "27"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Info",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"eNViDAT\",\r\n    \"name\": \"Nguyễn Văn Đạt\",\r\n    \"gender\": true,\r\n    \"email\": \"ngvidat@gmail.com\",\r\n    \"Phone\": \"0775702201\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userV1Path}}/:user_id/info",
+							"host": [
+								"{{userV1Path}}"
+							],
+							"path": [
+								":user_id",
+								"info"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Identity",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"eNViDAT\",\r\n    \"name\": \"Nguyễn Văn Đạt\",\r\n    \"gender\": true,\r\n    \"email\": \"ngvidat@gmail.com\",\r\n    \"Phone\": \"0775702201\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userV1Path}}/:user_id/identity",
+							"host": [
+								"{{userV1Path}}"
+							],
+							"path": [
+								":user_id",
+								"identity"
 							],
 							"query": [
 								{
@@ -1393,26 +1524,31 @@
 										{
 											"key": "fields[]",
 											"value": "gender_0",
+											"description": "\"name\", \"id\"",
 											"disabled": true
 										},
 										{
 											"key": "search[]",
 											"value": "gender_true",
+											"description": "\"name\"",
 											"disabled": true
 										},
 										{
 											"key": "search[]",
 											"value": "",
+											"description": "\"name\"",
 											"disabled": true
 										},
 										{
 											"key": "sorts[]",
 											"value": "",
+											"description": "\"name\"",
 											"disabled": true
 										},
 										{
 											"key": "sorts[]",
 											"value": "",
+											"description": "\"name\"",
 											"disabled": true
 										}
 									]
@@ -1460,26 +1596,31 @@
 										{
 											"key": "fields[]",
 											"value": "gender_0",
+											"description": "\"name\"",
 											"disabled": true
 										},
 										{
 											"key": "search[]",
 											"value": "gender_true",
+											"description": "\"name\"",
 											"disabled": true
 										},
 										{
 											"key": "search[]",
 											"value": "",
+											"description": "\"name\"",
 											"disabled": true
 										},
 										{
 											"key": "sorts[]",
 											"value": "",
+											"description": "\"name\", \"id\"",
 											"disabled": true
 										},
 										{
 											"key": "sorts[]",
 											"value": "",
+											"description": "\"name\", \"id\"",
 											"disabled": true
 										}
 									],
@@ -1531,7 +1672,7 @@
 									"variable": [
 										{
 											"key": "provider_id",
-											"value": "1"
+											"value": "3"
 										}
 									]
 								}
@@ -1578,7 +1719,7 @@
 									"variable": [
 										{
 											"key": "provider_id",
-											"value": "1"
+											"value": "2"
 										},
 										{
 											"key": "user_id",
@@ -1766,11 +1907,199 @@
 									"variable": [
 										{
 											"key": "provider_id",
-											"value": "1"
+											"value": "2"
 										},
 										{
 											"key": "user_id",
 											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Favorite",
+					"item": [
+						{
+							"name": "Providers By UserID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{favoriteV1Path}}/user/:user_id",
+									"host": [
+										"{{favoriteV1Path}}"
+									],
+									"path": [
+										"user",
+										":user_id"
+									],
+									"query": [
+										{
+											"key": "fields[]",
+											"value": "gender_0",
+											"disabled": true
+										},
+										{
+											"key": "search[]",
+											"value": "gender_true",
+											"disabled": true
+										},
+										{
+											"key": "search[]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "sorts[]",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "sorts[]",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Favorite",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": 1,\r\n    \"provider_id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{favoriteV1Path}}",
+									"host": [
+										"{{favoriteV1Path}}"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Favorite",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    3,\r\n    4\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{favoriteV1Path}}/user/:user_id/provider/:provider_id",
+									"host": [
+										"{{favoriteV1Path}}"
+									],
+									"path": [
+										"user",
+										":user_id",
+										"provider",
+										":provider_id"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": null
+										},
+										{
+											"key": "provider_id",
+											"value": null
 										}
 									]
 								}
@@ -1810,9 +2139,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{categoryV1Path}}",
+									"raw": "{{categoryV1Path}}/list",
 									"host": [
 										"{{categoryV1Path}}"
+									],
+									"path": [
+										"list"
 									]
 								}
 							},
@@ -2143,26 +2475,31 @@
 										{
 											"key": "fields[]",
 											"value": "gender_0",
+											"description": "\"discount\", \"collection\", \"end_time\"",
 											"disabled": true
 										},
 										{
 											"key": "search[]",
 											"value": "gender_true",
+											"description": "\"discount\", \"collection\", \"end_time\"",
 											"disabled": true
 										},
 										{
 											"key": "search[]",
 											"value": "",
+											"description": "\"discount\", \"collection\", \"end_time\"",
 											"disabled": true
 										},
 										{
 											"key": "sorts[]",
 											"value": "",
+											"description": "\"discount\", \"collection\", \"end_time\", \"id\"",
 											"disabled": true
 										},
 										{
 											"key": "sorts[]",
 											"value": "",
+											"description": "\"discount\", \"collection\", \"end_time\", \"id\"",
 											"disabled": true
 										}
 									]
@@ -2484,7 +2821,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{commentV1Path}}/product/:product_id",
+							"raw": "{{commentV1Path}}/product/:product_id?sorts[]=id_DESC",
 							"host": [
 								"{{commentV1Path}}"
 							],
@@ -2537,8 +2874,7 @@
 								},
 								{
 									"key": "sorts[]",
-									"value": "",
-									"disabled": true
+									"value": "id_DESC"
 								},
 								{
 									"key": "sorts[]",
@@ -2749,31 +3085,37 @@
 								{
 									"key": "fields[]",
 									"value": "phone_0775702201",
+									"description": "\"provider_id\", \"user_id\"",
 									"disabled": true
 								},
 								{
 									"key": "fields[]",
 									"value": "gender_0",
+									"description": "\"provider_id\", \"user_id\"",
 									"disabled": true
 								},
 								{
 									"key": "search[]",
 									"value": "gender_true",
+									"description": "\"provider_id\", \"user_id\"",
 									"disabled": true
 								},
 								{
 									"key": "search[]",
 									"value": "",
+									"description": "\"provider_id\", \"user_id\"",
 									"disabled": true
 								},
 								{
 									"key": "sorts[]",
 									"value": "",
+									"description": "\"provider_id\", \"user_id\", \"id\"",
 									"disabled": true
 								},
 								{
 									"key": "sorts[]",
 									"value": "",
+									"description": "\"provider_id\", \"user_id\", \"id\"",
 									"disabled": true
 								}
 							],
@@ -3132,31 +3474,37 @@
 								{
 									"key": "fields[]",
 									"value": "phone_0775702201",
+									"description": "\"provider_id\", \"user_id\", \"name\", \"gender\", \"status\", \"id\"",
 									"disabled": true
 								},
 								{
 									"key": "fields[]",
 									"value": "gender_0",
+									"description": "\"provider_id\", \"user_id\", \"name\", \"gender\", \"status\", \"id\"",
 									"disabled": true
 								},
 								{
 									"key": "search[]",
 									"value": "gender_true",
+									"description": "\"name\", \"gender\", \"status\", \"phone\", \"province\", \"district\", \"ward\", \"street\", \"quantity\"",
 									"disabled": true
 								},
 								{
 									"key": "search[]",
 									"value": "",
+									"description": "\"name\", \"gender\", \"status\", \"phone\", \"province\", \"district\", \"ward\", \"street\", \"quantity\"",
 									"disabled": true
 								},
 								{
 									"key": "sorts[]",
 									"value": "",
+									"description": "\"provider_id\", \"user_id\", \"name\", \"gender\", \"status\", \"total\", \"discount\", \"id\", \"province\", \"district\", \"ward\"",
 									"disabled": true
 								},
 								{
 									"key": "sorts[]",
 									"value": "",
+									"description": "\"provider_id\", \"user_id\", \"name\", \"gender\", \"status\", \"total\", \"discount\", \"id\", \"province\", \"district\", \"ward\"",
 									"disabled": true
 								}
 							],
@@ -3198,7 +3546,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{orderV1Path}}/provider/:provider_id",
+							"raw": "{{orderV1Path}}/provider/:provider_id?fields[]=status_WAITING",
 							"host": [
 								"{{orderV1Path}}"
 							],
@@ -3231,8 +3579,7 @@
 								},
 								{
 									"key": "fields[]",
-									"value": "phone_0775702201",
-									"disabled": true
+									"value": "status_WAITING"
 								},
 								{
 									"key": "fields[]",
@@ -3511,7 +3858,7 @@
 							"variable": [
 								{
 									"key": "order_id",
-									"value": "9"
+									"value": "25"
 								}
 							]
 						}
@@ -3544,7 +3891,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": 1,\r\n    \"name\": \"Ngừi Địp\",\r\n    \"gender\": true,\r\n    \"phone\": \"1234567890\",\r\n    \"province\": \"Bình Chánh\",\r\n    \"district\": \"Ninh Thuận\",\r\n    \"ward\": \"Quảng Bình\",\r\n    \"street\": \"Trường chinh\",\r\n    \"quantity\": 20,\r\n    \"total\": 300000,\r\n    \"discount\": 20,\r\n    \"status_description\":\"Provider Will call you soon\",\r\n    \"items\":[\r\n        {\r\n            \"category_id\":1,\r\n            \"product_id\":12,\r\n            \"provider_id\": 2,\r\n            \"product_option_id\": 12,\r\n            \"name\": \"xxxProductxxx\",\r\n            \"price\": 15000,\r\n            \"option\": \"Ngon nghẻ\",\r\n            \"quantity\": 20,\r\n            \"discount\": 5,\r\n            \"image\": \"This is Image\"\r\n        }\r\n    ],\r\n    \"cart_items_ids\":[1, 2, 3]\r\n\r\n}"
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"name\": \"Ngừi Địp\",\r\n    \"gender\": true,\r\n    \"phone\": \"1234567890\",\r\n    \"province\": \"Bình Chánh\",\r\n    \"district\": \"Ninh Thuận\",\r\n    \"ward\": \"Quảng Bình\",\r\n    \"street\": \"Trường chinh\",\r\n    \"quantity\": 20,\r\n    \"total\": 300000,\r\n    \"discount\": 20,\r\n    \"status_description\":\"Provider Will call you soon\",\r\n    \"cart_items_ids\":[1, 2, 3]\r\n}"
 						},
 						"url": {
 							"raw": "{{orderV1Path}}",
@@ -4266,7 +4613,7 @@
 							"variable": [
 								{
 									"key": "category_id",
-									"value": null
+									"value": "1"
 								}
 							]
 						}
@@ -4348,7 +4695,7 @@
 							"variable": [
 								{
 									"key": "category_id",
-									"value": null
+									"value": "1"
 								}
 							]
 						}
