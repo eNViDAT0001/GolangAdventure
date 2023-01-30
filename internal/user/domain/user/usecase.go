@@ -12,6 +12,7 @@ type UseCase interface {
 	GetUserList(ctx context.Context, input *paging.ParamsInput) ([]*entities.User, error)
 	CreateUser(ctx context.Context, input *io.CreateUserInput) (userID uint, err error)
 	UpdateUser(ctx context.Context, userID uint32, input *io.UpdateUserInput) error
+	ComparePassword(ctx context.Context, userID uint32, password string) (io.UserPassword, error)
 	SetPassword(ctx context.Context, userID uint32, password string, newPassword string) error
 	DeleteUserByIDs(ctx context.Context, IDs []uint) error
 	GetUserByUsername(ctx context.Context, username string) (*entities.User, error)

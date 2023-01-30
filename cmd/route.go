@@ -6,7 +6,7 @@ import (
 )
 
 func router(r *gin.Engine) {
-	r.Use(requestid.New(requestid.WithCustomHeaderStrKey("CES-Iz-da-Best")))
+	r.Use(requestid.New(requestid.WithCustomHeaderStrKey("da-Best-thesis")))
 	allHandler := initHandlerCollection()
 
 	// Validate Token: allHandler.jwtHandler.VerifyToken()
@@ -50,6 +50,18 @@ func router(r *gin.Engine) {
 			authGroup.PATCH("/:provider_id/user/:user_id", allHandler.providerHandler.UpdateProvider())
 			authGroup.DELETE("/:provider_id/user/:user_id", allHandler.providerHandler.DeleteProviderByID())
 		}
+
+		favoriteGroup := v1.Group("/favorites")
+		{
+			// Phân quyền theo User ID
+			authGroup := favoriteGroup.Group("")
+			authGroup.Use(allHandler.jwtHandler.VerifyUserToken())
+
+			authGroup.GET("/user/:user_id", allHandler.favoriteHandler.ListProvidersByUserID())
+			authGroup.POST("", allHandler.favoriteHandler.AddFavorite())
+			authGroup.DELETE("/user/:user_id/provider/:provider_id", allHandler.favoriteHandler.DeleteFavorite())
+		}
+
 		categoryGroup := v1.Group("/categories")
 		{
 			// Phân quyền theo Admin
@@ -90,7 +102,9 @@ func router(r *gin.Engine) {
 			authAminGroup.Use(allHandler.jwtHandler.VerifyAdminToken())
 
 			authGroup.GET("/:user_id", allHandler.userHandler.GetUserDetailByID())
-			authGroup.PATCH("/:user_id", allHandler.userHandler.UpdateUser())
+			authGroup.PATCH("/:user_id", allHandler.userHandler.AdminUpdateUser())
+			authGroup.PATCH("/:user_id/info", allHandler.userHandler.UpdateUserInfo())
+			authGroup.PATCH("/:user_id/identity", allHandler.userHandler.UpdateUserIdentity())
 			authGroup.PUT("/:user_id", allHandler.userHandler.SetPassword())
 			authAminGroup.DELETE("/:user_id", allHandler.userHandler.DeleteUserByID())
 			authAminGroup.DELETE("", allHandler.userHandler.DeleteUserByIDs())

@@ -1,23 +1,25 @@
 package entities
 
-import "gorm.io/gorm"
+import (
+	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
+)
 
 type Order struct {
-	gorm.Model
-	UserID             uint        `gorm:"column:user_id"`
-	ProviderID         uint        `gorm:"column:provider_id"`
-	Name               string      `gorm:"column:name"`
-	Gender             *bool       `gorm:"column:gender"`
-	Phone              string      `gorm:"column:phone"`
-	Province           string      `gorm:"column:province"`
-	District           string      `gorm:"column:district"`
-	Ward               string      `gorm:"column:ward"`
-	Street             string      `gorm:"column:street"`
-	Quantity           int         `gorm:"column:quantity"`
-	Total              int         `gorm:"column:total"`
-	Discount           int         `gorm:"column:discount"`
-	Status             OrderStatus `gorm:"column:status"`
-	StatusDescriptions string      `gorm:"column:status_descriptions"`
+	wrap_gorm.SoftDeleteModel
+	UserID             uint        `gorm:"column:user_id" json:"user_id"`
+	ProviderID         uint        `gorm:"column:provider_id" json:"provider_id"`
+	Name               string      `gorm:"column:name" json:"name"`
+	Gender             *bool       `gorm:"column:gender" json:"gender"`
+	Phone              string      `gorm:"column:phone" json:"phone"`
+	Province           string      `gorm:"column:province" json:"province"`
+	District           string      `gorm:"column:district" json:"district"`
+	Ward               string      `gorm:"column:ward" json:"ward"`
+	Street             string      `gorm:"column:street" json:"street"`
+	Quantity           int         `gorm:"column:quantity" json:"quantity"`
+	Total              int         `gorm:"column:total" json:"total"`
+	Discount           int         `gorm:"column:discount" json:"discount"`
+	Status             OrderStatus `gorm:"column:status" json:"status"`
+	StatusDescriptions string      `gorm:"column:status_descriptions" json:"status_descriptions"`
 }
 
 func (Order) WithFields() []string {

@@ -4,8 +4,8 @@ import "gorm.io/gorm"
 
 type Cart struct {
 	gorm.Model
-	ProviderID uint `gorm:"column:provider_id"`
-	UserID     uint `gorm:"column:user_id"`
+	ProviderID uint `gorm:"column:provider_id" json:"provider_id"`
+	UserID     uint `gorm:"column:user_id" json:"user_id"`
 }
 
 func (Cart) WithFields() []string {

@@ -1,16 +1,16 @@
 package entities
 
 import (
+	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
 	"gorm.io/datatypes"
-	"gorm.io/gorm"
 )
 
 type Reservation struct {
-	gorm.Model
-	OptionID uint           `gorm:"column:option_id"`
-	OrderID  uint           `gorm:"column:order_id"`
-	Quantity int            `gorm:"column:quantity"`
-	EndTime  datatypes.Time `gorm:"column:end_time"`
+	wrap_gorm.SoftDeleteModel
+	OptionID uint           `gorm:"column:option_id" json:"option_id"`
+	OrderID  uint           `gorm:"column:order_id" json:"order_id"`
+	Quantity int            `gorm:"column:quantity" json:"quantity"`
+	EndTime  datatypes.Time `gorm:"column:end_time" json:"end_time"`
 }
 
 func (Reservation) TableName() string {

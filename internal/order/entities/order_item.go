@@ -1,19 +1,21 @@
 package entities
 
-import "gorm.io/gorm"
+import (
+	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
+)
 
 type OrderItem struct {
-	gorm.Model
-	OrderID         uint   `gorm:"column:order_id"`
-	ProviderID      uint   `gorm:"column:provider_id"`
-	ProductID       uint   `gorm:"column:product_id"`
-	ProductOptionID uint   `gorm:"column:product_option_id"`
-	Name            string `gorm:"column:name"`
-	Price           int    `gorm:"column:price"`
-	Option          string `gorm:"column:option"`
-	Quantity        int    `gorm:"column:quantity"`
-	Discount        int    `gorm:"column:discount"`
-	Image           string `gorm:"column:image"`
+	wrap_gorm.SoftDeleteModel
+	OrderID         uint   `gorm:"column:order_id" json:"order_id"`
+	ProviderID      uint   `gorm:"column:provider_id" json:"provider_id"`
+	ProductID       uint   `gorm:"column:product_id" json:"product_id"`
+	ProductOptionID uint   `gorm:"column:product_option_id" json:"product_option_id"`
+	Name            string `gorm:"column:name" json:"name"`
+	Price           int    `gorm:"column:price" json:"price"`
+	Option          string `gorm:"column:option" json:"option"`
+	Quantity        int    `gorm:"column:quantity" json:"quantity"`
+	Discount        int    `gorm:"column:discount" json:"discount"`
+	Image           string `gorm:"column:image" json:"image"`
 }
 
 func (OrderItem) WithFields() []string {

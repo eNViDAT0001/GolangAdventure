@@ -14,6 +14,7 @@ import (
 	productHttpHandlerPKG "github.com/eNViDAT0001/Backend/delivery/http/product"
 	bannerHttpHandlerPKG "github.com/eNViDAT0001/Backend/delivery/http/store/banner"
 	categoryHttpHandlerPKG "github.com/eNViDAT0001/Backend/delivery/http/store/category"
+	favoriteHttpHandlerPKG "github.com/eNViDAT0001/Backend/delivery/http/store/favorite"
 	providerHttpHandlerPKG "github.com/eNViDAT0001/Backend/delivery/http/store/provider"
 
 	userHttpHandlerPKG "github.com/eNViDAT0001/Backend/delivery/http/user"
@@ -34,6 +35,10 @@ import (
 	providerPKG "github.com/eNViDAT0001/Backend/internal/store/domain/provider"
 	providerStoPKG "github.com/eNViDAT0001/Backend/internal/store/domain/provider/storage"
 	providerUCPKG "github.com/eNViDAT0001/Backend/internal/store/domain/provider/usecase"
+
+	favoritePKG "github.com/eNViDAT0001/Backend/internal/store/domain/favorite"
+	favoriteStoPKG "github.com/eNViDAT0001/Backend/internal/store/domain/favorite/storage"
+	favoriteUCPKG "github.com/eNViDAT0001/Backend/internal/store/domain/favorite/usecase"
 
 	bannerPKG "github.com/eNViDAT0001/Backend/internal/store/domain/banner"
 	bannerStoPKG "github.com/eNViDAT0001/Backend/internal/store/domain/banner/storage"
@@ -108,6 +113,10 @@ var IteratorCollection = wire.NewSet(
 	providerUCPKG.NewProviderUseCase,
 	providerStoPKG.NewProviderStorage,
 
+	favoriteHttpHandlerPKG.NewFavoriteHandler,
+	favoriteUCPKG.NewFavoriteUseCase,
+	favoriteStoPKG.NewFavoriteStorage,
+
 	bannerHttpHandlerPKG.NewBannerHandler,
 	bannerUCPKG.NewBannerUseCase,
 	bannerStoPKG.NewBannerStorage,
@@ -146,6 +155,7 @@ type HandlerCollection struct {
 	appAccessHandler appAccessionPKG.HttpHandler
 	jwtHandler       jwtPKG.HttpHandler
 	providerHandler  providerPKG.HttpHandler
+	favoriteHandler  favoritePKG.HttpHandler
 	bannerHandler    bannerPKG.HttpHandler
 	productHandler   productPKG.HttpHandler
 	commentHandler   commentPKG.HttpHandler
@@ -163,6 +173,7 @@ func NewHandlerCollection(
 	appAccessHandler appAccessionPKG.HttpHandler,
 	jwtHandler jwtPKG.HttpHandler,
 	providerHandler providerPKG.HttpHandler,
+	favoriteHandler favoritePKG.HttpHandler,
 	productHandler productPKG.HttpHandler,
 	commentHandler commentPKG.HttpHandler,
 	mediaHandler mediaPKG.HttpHandler,
@@ -187,5 +198,6 @@ func NewHandlerCollection(
 		cartItemHandler:  cartItemHandler,
 		orderHandler:     orderHandler,
 		orderItemHandler: orderItemHandler,
+		favoriteHandler:  favoriteHandler,
 	}
 }

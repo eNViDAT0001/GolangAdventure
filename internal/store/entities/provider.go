@@ -1,12 +1,14 @@
 package entities
 
-import "gorm.io/gorm"
+import (
+	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
+)
 
 type Provider struct {
-	gorm.Model
-	UserID    uint   `gorm:"column:user_id"`
-	Name      string `gorm:"column:name"`
-	ImagePath string `gorm:"column:image_path"`
+	wrap_gorm.SoftDeleteModel
+	UserID    uint   `gorm:"column:user_id" json:"user_id"`
+	Name      string `gorm:"column:name" json:"name"`
+	ImagePath string `gorm:"column:image_path" json:"image_path"`
 }
 
 func (Provider) WithFields() []string {

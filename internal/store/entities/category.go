@@ -1,14 +1,14 @@
 package entities
 
 import (
-	"gorm.io/gorm"
+	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
 )
 
 type Category struct {
-	gorm.Model
-	CategoryParentID *uint  `gorm:"column:category_parent_id"`
-	Name             string `gorm:"column:name"`
-	ImagePath        string `gorm:"column:image_path"`
+	wrap_gorm.SoftDeleteModel
+	CategoryParentID *uint  `gorm:"column:category_parent_id" json:"category_parent_id"`
+	Name             string `gorm:"column:name" json:"name"`
+	ImagePath        string `gorm:"column:image_path" json:"image_path"`
 }
 
 func (Category) TableName() string {

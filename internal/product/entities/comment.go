@@ -1,14 +1,16 @@
 package entities
 
-import "gorm.io/gorm"
+import (
+	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
+)
 
 type Comment struct {
-	gorm.Model
-	ProductID    uint   `gorm:"column:product_id"`
-	UserID       uint   `gorm:"column:user_id"`
-	Name         string `gorm:"column:name"`
-	Descriptions string `gorm:"column:descriptions"`
-	Rating       int    `gorm:"column:rating"`
+	wrap_gorm.SoftDeleteModel
+	ProductID    uint   `gorm:"column:product_id" json:"product_id"`
+	UserID       uint   `gorm:"column:user_id" json:"user_id"`
+	Name         string `gorm:"column:name" json:"name"`
+	Descriptions string `gorm:"column:descriptions" json:"descriptions"`
+	Rating       int    `gorm:"column:rating" json:"rating"`
 }
 
 func (Comment) WithFields() []string {

@@ -5,11 +5,11 @@ import (
 )
 
 type favoriteUseCase struct {
-	favoriteSto favorite.UseCase
+	favoriteSto favorite.Storage
 }
 
 func NewFavoriteUseCase(
-	favoriteSto favorite.UseCase,
+	favoriteSto favorite.Storage,
 
 ) favorite.UseCase {
 	return &favoriteUseCase{

@@ -1,32 +1,32 @@
 package entities
 
 import (
+	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
 	"golang.org/x/crypto/bcrypt"
-	"gorm.io/gorm"
 )
 
 type User struct {
-	gorm.Model
-	Username *string   `gorm:"column:username"`
-	Password *string   `gorm:"column:password"`
-	Salt     *string   `gorm:"column:salt"`
-	Name     *string   `gorm:"column:name"`
-	Birthday *string   `gorm:"column:birthday"`
-	Gender   *bool     `gorm:"column:gender"`
-	Email    *string   `gorm:"column:email"`
-	Phone    *string   `gorm:"column:phone"`
-	Type     *UserType `gorm:"column:type"`
-	Avatar   *string   `gorm:"column:avatar"`
+	wrap_gorm.SoftDeleteModel
+	Username *string   `gorm:"column:username" json:"username"`
+	Password *string   `gorm:"column:password" json:"password"`
+	Salt     *string   `gorm:"column:salt" json:"salt"`
+	Name     *string   `gorm:"column:name" json:"name"`
+	Birthday *string   `gorm:"column:birthday" json:"birthday"`
+	Gender   *bool     `gorm:"column:gender" json:"gender"`
+	Email    *string   `gorm:"column:email" json:"email"`
+	Phone    *string   `gorm:"column:phone" json:"phone"`
+	Type     *UserType `gorm:"column:type" json:"type"`
+	Avatar   *string   `gorm:"column:avatar" json:"avatar"`
 }
 
 func (User) WithFields() []string {
 	return []string{"username", "name", "gender", "email", "phone", "type"}
 }
 func (User) SearchFields() []string {
-	return []string{"birthday"}
+	return []string{"birthday", "username", "name", "gender", "email", "phone", "type"}
 }
 func (User) SortFields() []string {
-	return []string{"username", "name", "gender", "email", "phone", "type"}
+	return []string{"username", "name", "gender", "email", "phone", "type", "id"}
 }
 func (User) TableName() string {
 	return "User"

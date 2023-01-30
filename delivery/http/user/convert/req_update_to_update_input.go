@@ -6,15 +6,7 @@ import (
 	"github.com/jinzhu/copier"
 )
 
-func UpdateReqToUpdateUserInput(input *ioHandler.UpdateUserReq) (*ioSto.UpdateUserInput, error) {
-	var result ioSto.UpdateUserInput
-	err := copier.Copy(&result, input)
-	if err != nil {
-		return nil, err
-	}
-	return &result, nil
-}
-func AdminUpdateReqToUpdateUserInput(input *ioHandler.UpdateUserReq) (*ioSto.UpdateUserInput, error) {
+func UpdateReqToUpdateUserRepo[T ioHandler.UpdateUserReq](input *T) (*ioSto.UpdateUserInput, error) {
 	var result ioSto.UpdateUserInput
 	err := copier.Copy(&result, input)
 	if err != nil {

@@ -5,9 +5,9 @@ import (
 )
 
 type favoriteHandler struct {
-	favoriteUC favorite.HttpHandler
+	favoriteUC favorite.UseCase
 }
 
-func NewFavoriteHandler(favoriteUC favorite.HttpHandler) favorite.HttpHandler {
+func NewFavoriteHandler(favoriteUC favorite.UseCase) favorite.HttpHandler {
 	return &favoriteHandler{favoriteUC: favoriteUC}
 }

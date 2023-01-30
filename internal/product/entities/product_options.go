@@ -1,16 +1,16 @@
 package entities
 
 import (
-	"gorm.io/gorm"
+	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
 )
 
 type ProductOption struct {
-	gorm.Model
-	SpecificationID *uint  `gorm:"column:specification_id"`
-	ProductID       uint   `gorm:"column:product_id"`
-	Name            string `gorm:"column:name"`
-	Price           int    `gorm:"column:price"`
-	Quantity        int    `gorm:"column:quantity"`
+	wrap_gorm.SoftDeleteModel
+	SpecificationID *uint  `gorm:"column:specification_id" json:"specification_id"`
+	ProductID       uint   `gorm:"column:product_id" json:"product_id"`
+	Name            string `gorm:"column:name" json:"name"`
+	Price           int    `gorm:"column:price" json:"price"`
+	Quantity        int    `gorm:"column:quantity" json:"quantity"`
 }
 
 func (ProductOption) TableName() string {

@@ -2,15 +2,15 @@ package entities
 
 import (
 	"github.com/eNViDAT0001/Backend/external/enum"
-	"gorm.io/gorm"
+	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
 )
 
 type ProductMedia struct {
-	gorm.Model
-	ProductID uint           `gorm:"column:product_id"`
-	PublicID  string         `gorm:"column:public_id"`
-	MediaPath string         `gorm:"column:media_path"`
-	MediaType enum.MediaType `gorm:"column:media_type"`
+	wrap_gorm.SoftDeleteModel
+	ProductID uint           `gorm:"column:product_id" json:"product_id"`
+	PublicID  string         `gorm:"column:public_id" json:"public_id"`
+	MediaPath string         `gorm:"column:media_path" json:"media_path"`
+	MediaType enum.MediaType `gorm:"column:media_type" json:"media_type"`
 }
 
 func (ProductMedia) TableName() string {

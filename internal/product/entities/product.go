@@ -1,15 +1,17 @@
 package entities
 
-import "gorm.io/gorm"
+import (
+	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
+)
 
 type Product struct {
-	gorm.Model
-	ProviderID uint   `gorm:"column:provider_id"`
-	CategoryID uint   `gorm:"column:category_id"`
-	UserID     uint   `gorm:"column:user_id"`
-	Name       string `gorm:"column:name"`
-	Price      string `gorm:"column:price"`
-	Discount   int    `gorm:"column:discount"`
+	wrap_gorm.SoftDeleteModel
+	ProviderID uint   `gorm:"column:provider_id" json:"provider_id"`
+	CategoryID uint   `gorm:"column:category_id" json:"category_id"`
+	UserID     uint   `gorm:"column:user_id" json:"user_id"`
+	Name       string `gorm:"column:name" json:"name"`
+	Price      string `gorm:"column:price" json:"price"`
+	Discount   int    `gorm:"column:discount" json:"discount"`
 }
 
 func (Product) WithFields() []string {
