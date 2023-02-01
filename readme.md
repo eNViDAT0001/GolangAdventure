@@ -1,5 +1,5 @@
 # About Project
-#### This project is a simple Golang Back-end build for Ecommerce system follow Clean Architech, domains include:
+#### This project is a simple Golang Back-end build for Ecommerce system follow Clean Architecture, domains include:
 ```text
 - Cart
   - Carts
