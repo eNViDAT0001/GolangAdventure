@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"context"
-	ioUC "github.com/eNViDAT0001/Backend/internal/product/domain/product/usecase/io"
+	ioUC "github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product/usecase/io"
 )
 
 func (u *productUseCase) CreateSpecificationTree(ctx context.Context, specs []ioUC.SpecificationCreateForm) error {

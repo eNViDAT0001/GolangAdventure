@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	ioSto "github.com/eNViDAT0001/Backend/internal/product/domain/product/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/product/entities"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/entities"
 	"gorm.io/gorm"
 )
 

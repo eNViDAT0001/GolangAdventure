@@ -2,9 +2,9 @@ package app_file
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/delivery/http/app/app_file/io"
-	"github.com/eNViDAT0001/Backend/external/request"
-	"github.com/eNViDAT0001/Backend/external/wrap_cloudinary"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/app/app_file/io"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_cloudinary"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/store/domain/favorite"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/favorite"
 )
 
 type favoriteUseCase struct {

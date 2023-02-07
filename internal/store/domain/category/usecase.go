@@ -2,9 +2,9 @@ package category
 
 import (
 	"context"
-	ioSto "github.com/eNViDAT0001/Backend/internal/store/domain/category/storage/io"
-	ioUC "github.com/eNViDAT0001/Backend/internal/store/domain/category/usecase/io"
-	"github.com/eNViDAT0001/Backend/internal/store/entities"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category/storage/io"
+	ioUC "github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category/usecase/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/entities"
 )
 
 type UseCase interface {

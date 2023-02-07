@@ -1,8 +1,8 @@
 package convert
 
 import (
-	ioUC "github.com/eNViDAT0001/Backend/internal/store/domain/category/usecase/io"
-	"github.com/eNViDAT0001/Backend/internal/store/entities"
+	ioUC "github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category/usecase/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/entities"
 	"github.com/jinzhu/copier"
 )
 

@@ -2,8 +2,8 @@ package order_items
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/request"
-	"github.com/eNViDAT0001/Backend/internal/order/domain/order_item"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order_item"
 	"github.com/gin-gonic/gin"
 	"strconv"
 )

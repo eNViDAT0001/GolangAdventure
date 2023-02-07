@@ -2,7 +2,7 @@ package wrap_gorm
 
 import (
 	"fmt"
-	"github.com/eNViDAT0001/Backend/external/wrap_viper"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_viper"
 	"log"
 	"os"
 	"time"

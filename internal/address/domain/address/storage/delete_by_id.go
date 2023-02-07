@@ -2,8 +2,8 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	"github.com/eNViDAT0001/Backend/internal/address/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/internal/address/entities"
 )
 
 func (a *addressStorage) DeleteAddressByIDs(ctx context.Context, userID uint, addressIDs []uint) error {

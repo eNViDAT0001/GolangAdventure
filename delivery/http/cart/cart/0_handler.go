@@ -1,7 +1,7 @@
 package cart
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/cart/domain/cart"
+	"github.com/eNViDAT0001/GolangAdventure/internal/cart/domain/cart"
 )
 
 type cartHandler struct {

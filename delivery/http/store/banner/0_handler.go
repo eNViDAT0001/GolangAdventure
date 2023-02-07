@@ -1,7 +1,7 @@
 package banner
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/store/domain/banner"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/banner"
 )
 
 type bannerHandler struct {

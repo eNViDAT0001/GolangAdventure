@@ -3,7 +3,7 @@ package request
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

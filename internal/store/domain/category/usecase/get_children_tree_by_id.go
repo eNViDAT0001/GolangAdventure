@@ -3,9 +3,9 @@ package usecase
 import (
 	"context"
 
-	"github.com/eNViDAT0001/Backend/internal/store/domain/category/storage"
-	ioSto "github.com/eNViDAT0001/Backend/internal/store/domain/category/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/store/domain/category/usecase/convert"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category/storage"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category/usecase/convert"
 	"gorm.io/gorm"
 )
 

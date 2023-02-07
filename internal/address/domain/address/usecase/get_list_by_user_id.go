@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"context"
-	ioSto "github.com/eNViDAT0001/Backend/internal/address/domain/address/storage/io"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/address/domain/address/storage/io"
 )
 
 func (a addressUseCase) GetAddressesWithUserID(ctx context.Context, userID uint) ([]ioSto.AddressPreview, error) {

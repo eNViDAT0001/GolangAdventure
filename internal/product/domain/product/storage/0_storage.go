@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/product/domain/product"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product"
 )
 
 type productStorage struct {

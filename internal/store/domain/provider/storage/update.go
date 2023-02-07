@@ -2,9 +2,9 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	"github.com/eNViDAT0001/Backend/internal/store/domain/provider/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/store/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/provider/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/entities"
 )
 
 func (s providerStorage) UpdateProvider(ctx context.Context, providerID uint, input io.ProviderUpdateForm) error {

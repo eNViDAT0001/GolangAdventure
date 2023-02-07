@@ -2,11 +2,11 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
-	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	"github.com/eNViDAT0001/Backend/internal/order/domain/order/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/order/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging/paging_query"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/entities"
 )
 
 func (s orderStorage) ListPreviewByUserID(ctx context.Context, userID uint, input paging.ParamsInput) ([]io.OrderPreview, error) {

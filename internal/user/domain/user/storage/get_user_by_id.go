@@ -2,8 +2,8 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	"github.com/eNViDAT0001/Backend/internal/user/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/entities"
 )
 
 func (u userStorage) GetUserDetailByID(ctx context.Context, ID uint) (*entities.User, error) {

@@ -2,8 +2,8 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	"github.com/eNViDAT0001/Backend/internal/order/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/entities"
 )
 
 func (s orderStorage) GetByOrderID(ctx context.Context, orderID uint) (entities.Order, error) {

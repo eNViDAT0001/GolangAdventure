@@ -1,6 +1,6 @@
 package paging
 
-import "github.com/eNViDAT0001/Backend/external/paging/paging_params"
+import "github.com/eNViDAT0001/GolangAdventure/external/paging/paging_params"
 
 type ParamsInput struct {
 	Marker int        `form:"marker"`

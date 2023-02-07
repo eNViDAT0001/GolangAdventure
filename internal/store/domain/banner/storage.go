@@ -2,9 +2,9 @@ package banner
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
-	"github.com/eNViDAT0001/Backend/internal/store/domain/banner/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/store/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/banner/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/entities"
 )
 
 type Storage interface {

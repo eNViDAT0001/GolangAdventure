@@ -2,10 +2,10 @@ package user
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
 
-	"github.com/eNViDAT0001/Backend/internal/user/domain/user/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/user/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/domain/user/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/entities"
 )
 
 type Storage interface {

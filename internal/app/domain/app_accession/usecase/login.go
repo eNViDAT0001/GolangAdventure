@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/user/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/entities"
 )
 
 func (u *appAccessionUseCase) Login(ctx context.Context, username string, password string) (*entities.User, error) {

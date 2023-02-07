@@ -2,9 +2,9 @@ package product
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/product/domain/product/storage/io"
-	ioUC "github.com/eNViDAT0001/Backend/internal/product/domain/product/usecase/io"
-	"github.com/eNViDAT0001/Backend/internal/product/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product/storage/io"
+	ioUC "github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product/usecase/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/entities"
 	"mime/multipart"
 )
 

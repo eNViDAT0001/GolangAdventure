@@ -2,11 +2,11 @@ package banner
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
-	ioSto "github.com/eNViDAT0001/Backend/internal/product/domain/product/storage/io"
-	productEntities "github.com/eNViDAT0001/Backend/internal/product/entities"
-	"github.com/eNViDAT0001/Backend/internal/store/domain/banner/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/store/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product/storage/io"
+	productEntities "github.com/eNViDAT0001/GolangAdventure/internal/product/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/banner/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/entities"
 )
 
 type UseCase interface {

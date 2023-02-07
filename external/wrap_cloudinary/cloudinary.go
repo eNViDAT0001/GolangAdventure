@@ -2,7 +2,7 @@ package wrap_cloudinary
 
 import (
 	"github.com/cloudinary/cloudinary-go/v2"
-	"github.com/eNViDAT0001/Backend/external/wrap_viper"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_viper"
 )
 
 var (

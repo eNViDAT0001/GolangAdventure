@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/eNViDAT0001/Backend/internal/user/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/entities"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"
 )

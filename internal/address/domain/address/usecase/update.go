@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	ioHandler "github.com/eNViDAT0001/Backend/delivery/http/address/io"
-	"github.com/eNViDAT0001/Backend/internal/address/domain/address/usecase/convert"
+	ioHandler "github.com/eNViDAT0001/GolangAdventure/delivery/http/address/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/address/domain/address/usecase/convert"
 )
 
 func (a addressUseCase) UpdateAddress(ctx context.Context, addressID uint, input ioHandler.UpdateAddressReq) error {

@@ -2,10 +2,10 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
-	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	"github.com/eNViDAT0001/Backend/internal/cart/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging/paging_query"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/internal/cart/entities"
 )
 
 func (c cartStorage) CountListCartByUserID(ctx context.Context, userID uint, filter paging.ParamsInput) (total int64, err error) {

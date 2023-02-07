@@ -1,8 +1,8 @@
 package convert
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/address/domain/address/usecase/io"
-	"github.com/eNViDAT0001/Backend/internal/address/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/address/domain/address/usecase/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/address/entities"
 	"github.com/jinzhu/copier"
 )
 

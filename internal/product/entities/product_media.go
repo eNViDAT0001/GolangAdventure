@@ -1,8 +1,8 @@
 package entities
 
 import (
-	"github.com/eNViDAT0001/Backend/external/enum"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/external/enum"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
 )
 
 type ProductMedia struct {

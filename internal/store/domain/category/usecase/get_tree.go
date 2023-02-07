@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"context"
-	ioSto "github.com/eNViDAT0001/Backend/internal/store/domain/category/storage/io"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category/storage/io"
 )
 
 func (u *categoryUseCase) GetCategoryTree(ctx context.Context) ([]ioSto.CategoryChildrenTree, error) {

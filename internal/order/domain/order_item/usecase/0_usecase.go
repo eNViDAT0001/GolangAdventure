@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/order/domain/order_item"
-	"github.com/eNViDAT0001/Backend/internal/order/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order_item"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/entities"
 )
 
 type orderItemUseCase struct {

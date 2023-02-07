@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/verification/domain/jwt/storage/io"
-	ioUC "github.com/eNViDAT0001/Backend/internal/verification/domain/jwt/usecase/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/verification/domain/jwt/storage/io"
+	ioUC "github.com/eNViDAT0001/GolangAdventure/internal/verification/domain/jwt/usecase/io"
 )
 
 func (s *jwtUseCase) GenerateToken(input io.GenerateTokenInput) (*ioUC.JwtToken, error) {

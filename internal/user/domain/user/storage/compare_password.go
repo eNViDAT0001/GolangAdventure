@@ -2,10 +2,10 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
 
-	"github.com/eNViDAT0001/Backend/internal/user/domain/user/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/user/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/domain/user/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/entities"
 	"gorm.io/gorm"
 )
 

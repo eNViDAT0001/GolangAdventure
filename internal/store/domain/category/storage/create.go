@@ -2,9 +2,9 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	ioSto "github.com/eNViDAT0001/Backend/internal/store/domain/category/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/store/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/entities"
 )
 
 func (c categoryStorage) CreateCategory(ctx context.Context, input *ioSto.CategoryForm) error {

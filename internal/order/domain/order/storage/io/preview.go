@@ -1,7 +1,7 @@
 package io
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/order/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/entities"
 	"gorm.io/datatypes"
 )
 

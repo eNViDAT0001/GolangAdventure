@@ -1,8 +1,8 @@
 package convert
 
 import (
-	ioHandler "github.com/eNViDAT0001/Backend/delivery/http/user/io"
-	"github.com/eNViDAT0001/Backend/external/paging"
+	ioHandler "github.com/eNViDAT0001/GolangAdventure/delivery/http/user/io"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
 	"github.com/jinzhu/copier"
 )
 

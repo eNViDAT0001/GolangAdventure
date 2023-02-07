@@ -2,7 +2,7 @@ package cart_item
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/cart/domain/cart_item/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/cart/domain/cart_item/storage/io"
 )
 
 type UseCase interface {

@@ -3,7 +3,7 @@ package media
 import (
 	"context"
 	"github.com/cloudinary/cloudinary-go/v2/api/uploader"
-	"github.com/eNViDAT0001/Backend/external/wrap_cloudinary"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_cloudinary"
 	"mime/multipart"
 )
 

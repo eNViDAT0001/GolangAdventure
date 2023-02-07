@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/user/domain/user/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/domain/user/storage/io"
 )
 
 func (u userUseCase) ComparePassword(ctx context.Context, userID uint32, password string) (io.UserPassword, error) {

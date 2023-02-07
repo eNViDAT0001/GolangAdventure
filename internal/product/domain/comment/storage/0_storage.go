@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/product/domain/comment"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/domain/comment"
 )
 
 type commentStorage struct {

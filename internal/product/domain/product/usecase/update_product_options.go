@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	ioSto "github.com/eNViDAT0001/Backend/internal/product/domain/product/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/product/domain/product/usecase/convert"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product/usecase/convert"
 )
 
 func (u *productUseCase) UpdateProductOptions(ctx context.Context, options []ioSto.ProductOptionUpdateForm) error {

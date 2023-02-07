@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/store/domain/category/usecase/convert"
-	ioUC "github.com/eNViDAT0001/Backend/internal/store/domain/category/usecase/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category/usecase/convert"
+	ioUC "github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category/usecase/io"
 )
 
 func (u *categoryUseCase) GetCategoryRoofList(ctx context.Context) ([]ioUC.CategoryPreview, error) {

@@ -2,10 +2,10 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
-	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	"github.com/eNViDAT0001/Backend/internal/store/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging/paging_query"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/entities"
 )
 
 func (f favoriteStorage) CountListFavoriteByUserID(ctx context.Context, userID uint, filter paging.ParamsInput) (int64, error) {

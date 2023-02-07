@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/store/domain/category"
-	"github.com/eNViDAT0001/Backend/internal/store/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/entities"
 )
 
 type categoryUseCase struct {

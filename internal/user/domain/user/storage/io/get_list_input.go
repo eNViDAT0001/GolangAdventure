@@ -1,8 +1,8 @@
 package io
 
 import (
-	"github.com/eNViDAT0001/Backend/external/paging"
-	"github.com/eNViDAT0001/Backend/external/paging/paging_params"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging/paging_params"
 )
 
 type GetListInput struct {

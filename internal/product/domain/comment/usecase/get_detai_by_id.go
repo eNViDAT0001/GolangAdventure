@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"context"
-	ioSto "github.com/eNViDAT0001/Backend/internal/product/domain/comment/storage/io"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/product/domain/comment/storage/io"
 )
 
 func (u *commentUseCase) GetCommentDetailByID(ctx context.Context, commentID uint) (ioSto.CommentDetail, error) {

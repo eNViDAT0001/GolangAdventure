@@ -2,8 +2,8 @@ package user
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/delivery/http/user/convert"
-	"github.com/eNViDAT0001/Backend/delivery/http/user/io"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/user/convert"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/user/io"
 	"github.com/gin-gonic/gin"
 	"strconv"
 )

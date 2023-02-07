@@ -2,11 +2,11 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/request"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
 	"strconv"
 
-	ioSto "github.com/eNViDAT0001/Backend/internal/verification/domain/jwt/storage/io"
-	ioUC "github.com/eNViDAT0001/Backend/internal/verification/domain/jwt/usecase/io"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/verification/domain/jwt/storage/io"
+	ioUC "github.com/eNViDAT0001/GolangAdventure/internal/verification/domain/jwt/usecase/io"
 	"github.com/golang-jwt/jwt/v4"
 )
 

@@ -2,9 +2,9 @@ package order
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/delivery/http/order/order/convert"
-	io2 "github.com/eNViDAT0001/Backend/delivery/http/order/order/io"
-	"github.com/eNViDAT0001/Backend/external/request"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/order/order/convert"
+	io2 "github.com/eNViDAT0001/GolangAdventure/delivery/http/order/order/io"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
 	"github.com/gin-gonic/gin"
 )
 

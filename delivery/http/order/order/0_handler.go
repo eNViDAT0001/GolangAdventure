@@ -1,7 +1,7 @@
 package order
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/order/domain/order"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order"
 )
 
 type orderHandler struct {

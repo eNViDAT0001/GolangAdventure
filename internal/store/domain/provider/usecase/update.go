@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/store/domain/provider/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/provider/storage/io"
 )
 
 func (u providerUseCase) UpdateProvider(ctx context.Context, providerID uint, input io.ProviderUpdateForm) error {

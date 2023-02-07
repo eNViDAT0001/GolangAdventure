@@ -1,10 +1,10 @@
 package jwt
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/product/domain/product"
-	"github.com/eNViDAT0001/Backend/internal/store/domain/provider"
-	"github.com/eNViDAT0001/Backend/internal/user/domain/user"
-	"github.com/eNViDAT0001/Backend/internal/verification/domain/jwt"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/provider"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/domain/user"
+	"github.com/eNViDAT0001/GolangAdventure/internal/verification/domain/jwt"
 )
 
 type jwtHandler struct {

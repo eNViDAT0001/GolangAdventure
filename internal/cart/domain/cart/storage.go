@@ -2,8 +2,8 @@ package cart
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
-	"github.com/eNViDAT0001/Backend/internal/cart/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/internal/cart/entities"
 )
 
 type Storage interface {

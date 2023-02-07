@@ -1,7 +1,7 @@
 package request
 
 import (
-	"github.com/eNViDAT0001/Backend/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
 	"github.com/spf13/viper"
 )
 

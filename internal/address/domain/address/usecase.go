@@ -2,10 +2,10 @@ package user
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/delivery/http/address/io"
-	ioSto "github.com/eNViDAT0001/Backend/internal/address/domain/address/storage/io"
-	ioUC "github.com/eNViDAT0001/Backend/internal/address/domain/address/usecase/io"
-	"github.com/eNViDAT0001/Backend/internal/address/entities"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/address/io"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/address/domain/address/storage/io"
+	ioUC "github.com/eNViDAT0001/GolangAdventure/internal/address/domain/address/usecase/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/address/entities"
 )
 
 type UseCase interface {

@@ -1,4 +1,4 @@
-module github.com/eNViDAT0001/Backend
+module github.com/eNViDAT0001/GolangAdventure
 
 go 1.18
 

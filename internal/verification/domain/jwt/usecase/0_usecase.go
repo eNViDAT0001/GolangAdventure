@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	userPKG "github.com/eNViDAT0001/Backend/internal/user/domain/user"
-	"github.com/eNViDAT0001/Backend/internal/verification/domain/jwt"
+	userPKG "github.com/eNViDAT0001/GolangAdventure/internal/user/domain/user"
+	"github.com/eNViDAT0001/GolangAdventure/internal/verification/domain/jwt"
 )
 
 type jwtUseCase struct {

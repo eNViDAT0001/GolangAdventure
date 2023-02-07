@@ -1,8 +1,8 @@
 package provider
 
 import (
-	"github.com/eNViDAT0001/Backend/external/request"
-	"github.com/eNViDAT0001/Backend/internal/store/domain/provider"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/provider"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

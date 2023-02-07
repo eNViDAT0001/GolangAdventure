@@ -2,8 +2,8 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	"github.com/eNViDAT0001/Backend/internal/product/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/entities"
 )
 
 func (s productStorage) GetProductDescriptionsByProductID(ctx context.Context, productID uint) ([]entities.ProductDescriptions, error) {

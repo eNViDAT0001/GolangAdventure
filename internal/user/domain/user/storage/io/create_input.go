@@ -1,7 +1,7 @@
 package io
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/user/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/entities"
 )
 
 type CreateUserInput struct {

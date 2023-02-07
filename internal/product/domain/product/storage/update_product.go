@@ -2,9 +2,9 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	"github.com/eNViDAT0001/Backend/internal/product/domain/product/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/product/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/entities"
 )
 
 func (s productStorage) UpdateProduct(ctx context.Context, productID uint, product io.ProductUpdateForm) error {

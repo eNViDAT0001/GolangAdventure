@@ -3,9 +3,9 @@ package user
 import (
 	"context"
 
-	"github.com/eNViDAT0001/Backend/delivery/http/user/convert"
-	"github.com/eNViDAT0001/Backend/delivery/http/user/io"
-	"github.com/eNViDAT0001/Backend/external/request"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/user/convert"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/user/io"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
 	"github.com/gin-gonic/gin"
 )
 

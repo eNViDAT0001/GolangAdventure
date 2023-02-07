@@ -1,8 +1,8 @@
 package convert
 
 import (
-	ioHttpHandler "github.com/eNViDAT0001/Backend/delivery/http/store/banner/io"
-	ioSto "github.com/eNViDAT0001/Backend/internal/store/domain/banner/storage/io"
+	ioHttpHandler "github.com/eNViDAT0001/GolangAdventure/delivery/http/store/banner/io"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/store/domain/banner/storage/io"
 	"github.com/jinzhu/copier"
 )
 

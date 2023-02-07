@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/address/domain/address/usecase/convert"
-	"github.com/eNViDAT0001/Backend/internal/address/domain/address/usecase/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/address/domain/address/usecase/convert"
+	"github.com/eNViDAT0001/GolangAdventure/internal/address/domain/address/usecase/io"
 )
 
 func (a addressUseCase) GetWardWithDistrictCode(ctx context.Context, districtCode string) ([]io.WardRes, error) {

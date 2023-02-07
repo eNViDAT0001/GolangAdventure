@@ -1,7 +1,7 @@
 package app_file
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/file_storage/domain/media"
+	"github.com/eNViDAT0001/GolangAdventure/internal/file_storage/domain/media"
 )
 
 type mediaHandler struct {

@@ -1,10 +1,10 @@
 package app_accession
 
 import (
-	"github.com/eNViDAT0001/Backend/external/request"
-	"github.com/eNViDAT0001/Backend/internal/app/domain/app_accession"
-	"github.com/eNViDAT0001/Backend/internal/user/domain/user"
-	"github.com/eNViDAT0001/Backend/internal/verification/domain/jwt"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
+	"github.com/eNViDAT0001/GolangAdventure/internal/app/domain/app_accession"
+	"github.com/eNViDAT0001/GolangAdventure/internal/user/domain/user"
+	"github.com/eNViDAT0001/GolangAdventure/internal/verification/domain/jwt"
 	"github.com/gin-gonic/gin"
 )
 

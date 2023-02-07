@@ -2,8 +2,8 @@ package user
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/address/domain/address/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/address/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/address/domain/address/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/address/entities"
 )
 
 type Storage interface {

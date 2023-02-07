@@ -2,10 +2,10 @@ package comment
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
-	"github.com/eNViDAT0001/Backend/external/paging/paging_params"
-	"github.com/eNViDAT0001/Backend/external/request"
-	"github.com/eNViDAT0001/Backend/internal/product/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging/paging_params"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/entities"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 	"strconv"

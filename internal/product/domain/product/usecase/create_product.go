@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/product/domain/product/usecase/convert"
-	ioUC "github.com/eNViDAT0001/Backend/internal/product/domain/product/usecase/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product/usecase/convert"
+	ioUC "github.com/eNViDAT0001/GolangAdventure/internal/product/domain/product/usecase/io"
 )
 
 func (u *productUseCase) CreateProduct(ctx context.Context, productDetail ioUC.ProductDetailCreateForm) (productID uint, err error) {

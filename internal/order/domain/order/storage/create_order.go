@@ -3,13 +3,13 @@ package storage
 import (
 	"context"
 	"fmt"
-	"github.com/eNViDAT0001/Backend/external/fake_redis"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	entities3 "github.com/eNViDAT0001/Backend/internal/cart/entities"
-	"github.com/eNViDAT0001/Backend/internal/order/domain/order/storage/io"
-	io2 "github.com/eNViDAT0001/Backend/internal/order/domain/order_item/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/order/entities"
-	entities2 "github.com/eNViDAT0001/Backend/internal/product/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/fake_redis"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	entities3 "github.com/eNViDAT0001/GolangAdventure/internal/cart/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order/storage/io"
+	io2 "github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order_item/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/entities"
+	entities2 "github.com/eNViDAT0001/GolangAdventure/internal/product/entities"
 	"gorm.io/gorm"
 )
 

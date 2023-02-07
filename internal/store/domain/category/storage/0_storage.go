@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/store/domain/category"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/category"
 )
 
 type categoryStorage struct {

@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/cloudinary/cloudinary-go/v2/api"
 	"github.com/cloudinary/cloudinary-go/v2/api/uploader"
-	wrap_cloudinary2 "github.com/eNViDAT0001/Backend/external/wrap_cloudinary"
+	wrap_cloudinary2 "github.com/eNViDAT0001/GolangAdventure/external/wrap_cloudinary"
 	"mime/multipart"
 )
 

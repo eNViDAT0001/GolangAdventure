@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/order/domain/order_item"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order_item"
 )
 
 type orderItemStorage struct {

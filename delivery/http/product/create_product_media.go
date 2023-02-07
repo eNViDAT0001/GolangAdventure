@@ -2,8 +2,8 @@ package product
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/delivery/http/product/io"
-	"github.com/eNViDAT0001/Backend/external/request"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/product/io"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
 	"github.com/gin-gonic/gin"
 	"strconv"
 )

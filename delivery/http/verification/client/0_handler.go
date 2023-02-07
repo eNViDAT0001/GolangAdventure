@@ -1,7 +1,7 @@
 package client
 
 import (
-	client "github.com/eNViDAT0001/Backend/internal/verification/domain/client"
+	client "github.com/eNViDAT0001/GolangAdventure/internal/verification/domain/client"
 	"github.com/gin-gonic/gin"
 )
 

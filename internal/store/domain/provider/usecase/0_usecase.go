@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/store/domain/provider"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/provider"
 )
 
 type providerUseCase struct {

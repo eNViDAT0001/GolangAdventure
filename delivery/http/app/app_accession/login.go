@@ -4,9 +4,9 @@ import (
 	"context"
 	"strconv"
 
-	"github.com/eNViDAT0001/Backend/delivery/http/app/app_accession/io"
-	"github.com/eNViDAT0001/Backend/external/request"
-	ioJwtSto "github.com/eNViDAT0001/Backend/internal/verification/domain/jwt/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/app/app_accession/io"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
+	ioJwtSto "github.com/eNViDAT0001/GolangAdventure/internal/verification/domain/jwt/storage/io"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )

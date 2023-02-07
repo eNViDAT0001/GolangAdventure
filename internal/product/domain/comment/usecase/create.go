@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/wrap_cloudinary"
-	ioSto "github.com/eNViDAT0001/Backend/internal/product/domain/comment/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_cloudinary"
+	ioSto "github.com/eNViDAT0001/GolangAdventure/internal/product/domain/comment/storage/io"
 	"mime/multipart"
 	"strings"
 )

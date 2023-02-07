@@ -1,8 +1,8 @@
 package convert
 
 import (
-	"github.com/eNViDAT0001/Backend/internal/store/domain/provider/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/store/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/domain/provider/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/store/entities"
 	"github.com/jinzhu/copier"
 )
 

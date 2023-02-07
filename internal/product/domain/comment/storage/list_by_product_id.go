@@ -2,11 +2,11 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
-	"github.com/eNViDAT0001/Backend/external/paging/paging_query"
-	"github.com/eNViDAT0001/Backend/external/wrap_gorm"
-	"github.com/eNViDAT0001/Backend/internal/product/domain/comment/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/product/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging/paging_query"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_gorm"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/domain/comment/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/product/entities"
 )
 
 func (c commentStorage) ListCommentByProductID(ctx context.Context, productID uint, filter paging.ParamsInput) ([]io.CommentDetail, error) {

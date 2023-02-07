@@ -2,10 +2,10 @@ package order
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/paging"
-	"github.com/eNViDAT0001/Backend/internal/order/domain/order/storage/io"
-	io2 "github.com/eNViDAT0001/Backend/internal/order/domain/order_item/storage/io"
-	"github.com/eNViDAT0001/Backend/internal/order/entities"
+	"github.com/eNViDAT0001/GolangAdventure/external/paging"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order/storage/io"
+	io2 "github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order_item/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/entities"
 )
 
 type Storage interface {

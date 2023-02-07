@@ -4,10 +4,10 @@ import (
 	"context"
 	"strconv"
 
-	"github.com/eNViDAT0001/Backend/delivery/http/user/convert"
-	"github.com/eNViDAT0001/Backend/delivery/http/user/io"
-	"github.com/eNViDAT0001/Backend/external/request"
-	ioJwtSto "github.com/eNViDAT0001/Backend/internal/verification/domain/jwt/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/user/convert"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/user/io"
+	"github.com/eNViDAT0001/GolangAdventure/external/request"
+	ioJwtSto "github.com/eNViDAT0001/GolangAdventure/internal/verification/domain/jwt/storage/io"
 	"github.com/gin-gonic/gin"
 )
 

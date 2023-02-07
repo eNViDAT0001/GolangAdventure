@@ -2,8 +2,8 @@ package storage
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/external/wrap_cloudinary"
-	"github.com/eNViDAT0001/Backend/internal/file_storage/domain/media"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_cloudinary"
+	"github.com/eNViDAT0001/GolangAdventure/internal/file_storage/domain/media"
 	"mime/multipart"
 )
 

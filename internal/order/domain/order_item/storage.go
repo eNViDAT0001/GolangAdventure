@@ -2,7 +2,7 @@ package order_item
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/order/entities"
+	"github.com/eNViDAT0001/GolangAdventure/internal/order/entities"
 )
 
 type Storage interface {

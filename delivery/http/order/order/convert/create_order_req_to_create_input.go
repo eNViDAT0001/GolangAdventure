@@ -1,9 +1,9 @@
 package convert
 
 import (
-	"github.com/eNViDAT0001/Backend/delivery/http/order/order/io"
-	io2 "github.com/eNViDAT0001/Backend/internal/order/domain/order/storage/io"
-	io3 "github.com/eNViDAT0001/Backend/internal/order/domain/order_item/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/delivery/http/order/order/io"
+	io2 "github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order/storage/io"
+	io3 "github.com/eNViDAT0001/GolangAdventure/internal/order/domain/order_item/storage/io"
 	"github.com/jinzhu/copier"
 )
 

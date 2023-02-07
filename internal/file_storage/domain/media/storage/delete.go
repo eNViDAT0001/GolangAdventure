@@ -3,7 +3,7 @@ package storage
 import (
 	"context"
 	"github.com/cloudinary/cloudinary-go/v2/api/uploader"
-	"github.com/eNViDAT0001/Backend/external/wrap_cloudinary"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_cloudinary"
 )
 
 func (m mediaStorage) DeleteMedia(ctx context.Context, publicID string) (*uploader.DestroyResult, error) {

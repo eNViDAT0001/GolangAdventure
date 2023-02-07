@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"context"
-	"github.com/eNViDAT0001/Backend/internal/cart/domain/cart_item"
-	"github.com/eNViDAT0001/Backend/internal/cart/domain/cart_item/storage/io"
+	"github.com/eNViDAT0001/GolangAdventure/internal/cart/domain/cart_item"
+	"github.com/eNViDAT0001/GolangAdventure/internal/cart/domain/cart_item/storage/io"
 )
 
 type cartItemUseCase struct {

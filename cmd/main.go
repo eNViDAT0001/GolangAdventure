@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/eNViDAT0001/Backend/external/wrap_viper"
+	"github.com/eNViDAT0001/GolangAdventure/external/wrap_viper"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
@@ -11,7 +11,7 @@ var viper *wrap_viper.WrapViper
 
 func init() {
 	viper = wrap_viper.GetViper()
-	viper.LoadConfigFile("../GolangQuest/config", "dev")
+	viper.LoadConfigFile("../GolangAdventure/config", "dev")
 }
 func main() {
 	r := gin.Default()
